@@ -1,0 +1,216 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<section class="sectionx">
+    <div class="section__mask"></div> 
+    <div class="container">
+        <div class="block-region-top">
+            <a href="/admin"> <img src="/images/logo.png" width="100"></a>
+            <div class=" mb-4" align="right"><img src="/images/bio/{{user.display_name}}" width="50" class="biopic2">
+
+             <div class="btn-group">
+  <button type="button" class="btn btn-sm btn-secondary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    {{user.username}}
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="/account">Account</a>
+    {{#ifCond user.role '===' 'admin'}}
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/admin/users">Users</a>
+    {{/ifCond}}
+    
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="/users/logout" onclick="return confirm('Sure to Logout')">Logout</a>
+   <div class="dropdown-divider"></div>
+  </div>
+</div>
+            </div>
+            <div>
+           
+                    {{#each errors}}
+                    {{#if message}}
+                    <p class="text-danger">{{this.msg}}</p>
+                    {{/if}}
+                    {{/each}}
+                    {{#if message}}
+                    <script type="text/javascript">
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: '{{message}}',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                    </script>
+                    {{/if}}
+                </div>
+
+                <div class="cta-left">
+                    <h4><span class="lasuccess" title="{{all}} Posts">{{knum all}}</span>  <a href="/properties/l/add" class="text-secondary"><b>Add Properties +</b></a></h4>
+                </div>
+                <div class=""><br/>
+                    {{#if posts}}
+                    {{#each posts}}
+
+                    <p><a title="{{this.title}}" href="/properties/{{this.permalink}}"> <img class="lazy header-img skeleton" data-src="{{this.mainimage}}"  height="auto"></a> <h5>{{this.title}}</h5>&nbsp;&nbsp; {{dateFormat this.date}}&nbsp;&nbsp;&nbsp;&nbsp;<a href="/properties/{{this._id}}/edit" title="Edit"> Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/properties/delete/{{this._id}}" onclick="return confirm('Delete?');"><i class="far fa-trash" style="color: red;"></i></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ontainer" title="available"><form  action="/properties/available/{{this._id}}" class="inlined" method="post"><label class="ma-switch" style="--width: 48px; --color: #26a69a">
+                                    {{#ifCond this.available '===' 'on'}}
+                                    <input type="checkbox" class="completing" name="headlin" id="headlin" checked>
+                                    {{else}}
+                                    <input type="checkbox" class="completing" name="headlin" id="headlin">
+                                    {{/ifCond}}
+                                    <span class="slider round"></span>
+                                </label></span>
+                            </form></p>
+                    <br />
+                    {{/each}}
+                    {{/if}}
+                </div>
+
+{{#if pagination}}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-pagination-area mt-20">
+                        <ul class="pagination page-numbers ">
+                            <!-- {{#paginate pagination type="first"}}
+                                   <li {{#if disabled}}class="disabled page-item"{{/if}}>
+                                   <a class="page-numbers" href="?p={{n}}">First</a></li>
+                            {{/paginate}}  -->
+                            {{#paginate pagination type="previous"}}
+                            <li {{#if disabled}} class="disabled page-item" {{/if}}><a class="page-numbers" href="?p={{n}}"><i class="icofont-long-arrow-left"></i></a></li>
+                            {{/paginate}}
+                            {{#paginate pagination type="middle" limit="5"}}
+                            {{#if active}} <li><span aria-current="page" class="page-numbers current">{{n}}</span></li>
+                            {{else}}
+                            <li class="page-item"><a class="page-numbers" href="?p={{n}}">{{n}}</a></li>
+                            {{/if}}
+                            {{/paginate}}
+                            {{#paginate pagination type="next"}}
+                            <li {{#if disabled}} class="disabled page-item" {{/if}}><a class="page-numbers" href="?p={{n}}"><i class="icofont-long-arrow-right"></i></a></li>
+                            {{/paginate}}
+                            <li>&nbsp;... &nbsp;</li>
+                            {{#paginate pagination type="last"}}
+                            <li {{#if disabled}} class="disabled page-item" {{/if}}><a class="page-numbers" href="?p={{n}}">{{n}}</a></li>
+                            {{/paginate}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+               
+
+              
+        
+        </div>
+    </div>
+</section>
+
+
+<style type="text/css">
+ p a{
+    color: orange
+  }
+
+  p a:hover{
+    color: #000;
+  }
+
+  h5 {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  resize: horizontal;
+}
+.roll{
+    height: 100vh;
+    overflow-x: hidden;
+}
+.sectionx{
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.header-img{
+    animation: skeleton-loading 1s linear infinite alternate;
+    object-fit: cover;
+    width: 90px;
+  height: 90px;
+  border-radius: 6px;
+
+}
+
+/***Skeleton loading 1.0**/
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+/**pill switches**/
+
+ .ontainer .ma-switch {
+     --width: 30px;
+     --height: calc(var(--width) / 2);
+     --color: #8ce196;
+     position: relative;
+     display: inline-block;
+     width: var(--width);
+     height: var(--height);
+     margin: 0;
+}
+ .ontainer .ma-switch .slider {
+     --slider-size: calc(var(--height) - 2px);
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     background-color: #ccc;
+     cursor: pointer;
+     transition: 0.4s;
+     overflow: hidden;
+}
+ .ontainer .ma-switch .slider::before {
+     position: absolute;
+     left: 1px;
+     bottom: 1px;
+     height: var(--slider-size);
+     width: var(--slider-size);
+     background-color: white;
+     transition: 0.4s;
+     transform-origin: left;
+     box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+     content: '';
+}
+ .ontainer .ma-switch .slider.round {
+     border-radius: 2px;
+}
+ .ontainer .ma-switch .slider.round::before {
+     border-radius: 2px;
+}
+ .ontainer .ma-switch input {
+     width: 0;
+     height: 0;
+     opacity: 0;
+}
+ .ontainer .ma-switch input:checked + .slider {
+     background-color: #60bd68;
+}
+ .ontainer .ma-switch input:focus + .slider {
+     box-shadow: 0 0 1px #60bd68;
+}
+ .ontainer .ma-switch input:checked + .slider:before {
+     transform: translateX(calc(var(--width) / 2));
+}
+
+ .ontainer .row {
+     display: flex;
+     align-items: center;
+     gap: 6px;
+}
+.lasuccess {background-color: blue; color: white; border-radius: 20; padding: 8px;}
+
+</style>
+<script type="text/javascript" src="/assets/js/radio.js"></script>

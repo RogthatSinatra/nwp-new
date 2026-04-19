@@ -1,0 +1,46 @@
+<div class="container-fluid sectionx" align="center">
+    <div  class="clearfix row">
+        <div  class="col-lg-6 clearfix" >
+            <article id="post-152663" class="clearfix post-152663 page type-page status-publish hentry" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+                <section class="post_content clearfix" itemprop="articleBody">
+                    <img src="/images/logo.png" width="100">
+                    <h3>Login</h3>
+                    <h2></h2>
+                    <!--Login Form-->
+                    <form role="form" method="POST" action="/users/login">
+                        <label>Username</label><br/>
+                        <input type="text" name="username" id="username" required class="form-control"><br/>
+                        <label>Password</label><br/>
+                        <input type="password" name="password" class="form-control" id="password" required>
+                        <div class="form-group">
+                           {{#if error}}
+                            <p class="text-danger">{{error}}</p>
+        {{/if}}
+        {{#if message}}
+                            <p class="text-success">{{message}}</p>
+        {{/if}}
+                            <button class="btn  rounded-0 px-3 px-5" id="login" type="submit" name="submit-form" value="Log in">Login</button>
+                        </div>
+                    </form>
+                </section>
+            </article>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+#login {
+    margin-top: 24px;
+    font-size: 14px;
+    color: white;
+    background-color: blue;
+    width: 118px;
+    height: 35px;
+    text-align: center;
+    border: none;
+
+}
+label{
+    margin-top: 20px;
+}
+
+</style>

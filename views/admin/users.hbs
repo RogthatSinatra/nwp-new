@@ -1,0 +1,138 @@
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<section class="section">
+    <div class="container">
+        <div>
+            {{#if error}}
+            <script type="text/javascript">
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: '{{error}}',
+                showConfirmButton: false,
+                timer: 5000
+            })
+            </script>
+            {{/if}}
+            {{#if message}}
+            <script type="text/javascript">
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: '{{message}}',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            </script>
+            {{/if}}
+        </div>
+        <div class="cta-left">
+        	     <a href="/admin"><img src="/images/logo.png" width="100"></a>
+            <h4 class="post-title">Users | <a href="/users/register">Signup User</a></h4>
+            <button class="btn btn-secondary btn-sm" id="toExcel"><i class="fal fa-file-excel"></i> CSV</button>
+            <button class="btn btn-success btn-sm" onclick="window.location.href='/backup'"><i class="fal fa-download"></i> Backup</button>
+        </div>
+        <div class="roll">
+            <table class="table caption-top" id="Record">
+                <caption></caption>
+                <thead>
+                    <tr>
+                        <th scope="col">({{users.length}})</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">USERNAME</th>
+                        <th scope="col ">EMAIL</th>
+                        <th scope="col">ADDED</th>
+                        <th scope="col">ROLE</th>
+                        <th scope="col">LOGGED</th>
+
+            
+                    </tr>
+                </thead>
+                <tbody>
+                    {{reverse users}}
+                    {{#each users}}
+
+                    <tr>
+                        <th scope="row" >{{addOne @index}}&nbsp;&nbsp;<img src="/images/bio/{{this.display_name}}" width="30"></th>
+                        <td title="{{this.username}}">{{this.display_name}}</td>
+
+                        <td>{{this.username}}</td>
+                         <td class="resize" title="{{this.email}}">{{this.email}}</td>
+                        <td title="{{dateFormat this.user_registered}}">{{dated this.user_registered}}</td>
+                        
+                            <td>
+                                {{this.role}}
+                            </td>
+  <td title="{{fulldate this.logged}}">{{dated this.logged}}</td>
+                         
+
+                     
+                    </tr>
+        
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<style type="text/css">
+
+
+p a {
+    color: orange
+}
+
+p a:hover {
+    color: #000;
+}
+
+option {
+    text-transform: uppercase;
+}
+table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+h5 {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    resize: horizontal;
+}
+
+.resize {
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    resize: horizontal;
+}
+
+.roll {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-x: scroll;
+}
+
+.section {
+    margin-top: 20px;
+
+}
+
+tr.ared {
+    background: #fac0d2 !important;
+}
+.post-title{
+	color: #808080;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/table2excel@1.0.4/dist/table2excel.min.js"></script>
+<script type="text/javascript">
+document.getElementById("toExcel").addEventListener("click", () => {
+    let table2excel = new Table2Excel();
+    table2excel.export(document.querySelector("#Record"));
+});
+</script>

@@ -1,0 +1,98 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<section class="sectionx">
+    <div class="section__mask"></div> 
+    <div class="container">
+        <div class="block-region-top">
+            <a href="/admin"> <img src="/images/logo.png" width="100"></a>
+            <div>
+           
+                    {{#each errors}}
+                    {{#if message}}
+                    <p class="text-danger">{{this.msg}}</p>
+                    {{/if}}
+                    {{/each}}
+                    {{#if message}}
+                    <script type="text/javascript">
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: '{{message}}',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                    </script>
+                    {{/if}}
+                </div>
+
+                <div class="cta-left">
+                    <h4><span class="lasuccess" title="{{categories.length}} categories">{{categories.length}}</span> <a href="/categories/add">Categories</a> | <a href="/admin"> Posts</a> </h4>
+                </div>
+                <form class="form" role="form" autocomplete="off" method="POST" action="/categories/add" >
+                        <div class="form-group row"><br><br><br>
+                            
+                            <div class="col-lg-9"><br>
+                                <input class="form-control mb-3" type="text" name="name" placeholder="Category name" required="true">
+                                 <input type="submit" class="btn btn-primary " value="Add +">
+                            </div>
+                        </div>
+
+                    </form>
+                    <a onclick="history.back()" class="pointer"><i class="far fa-arrow-left"></i> Go Back</a>
+                <div class="roll"><br/>
+                    {{#if categories}}
+                    {{#each categories}}
+
+                    <p><h5>{{this.name}}&nbsp;<a href="/categories/delete/{{this._id}}" onclick="return confirm('Delete this category?');"><i class="far fa-trash" style="color: red;"></i></a></h5> </p>
+                    <br />
+                    {{/each}}
+                    {{/if}}
+                </div>
+
+                <style type="text/css">
+ p a{
+    color: orange
+  }
+
+  p a:hover{
+    color: #000;
+  }
+
+  h5 {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  resize: horizontal;
+}
+.roll{
+    height: 100vh;
+    overflow-x: hidden;
+}
+.sectionx{
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.header-img{
+    animation: skeleton-loading 1s linear infinite alternate;
+    object-fit: cover;
+    width: 90px;
+  height: 90px;
+  border-radius: 6px;
+
+}
+
+/***Skeleton loading 1.0**/
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+.lasuccess {background-color: blue; color: white; border-radius: 20; padding: 8px;}
+
+</style>

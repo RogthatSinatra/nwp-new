@@ -1,0 +1,161 @@
+
+<div class="col-md-8 offset-md-2">
+
+    <form class="form-horizontal" role="form" method="POST" action="/users/register">
+        <div class="row">
+            <div class="col-md-6"><br>
+                 <img src="/images/logo.png" width="100">
+                <h3>Register New User</h3>
+             
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="name">Display Name</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="name" class="form-control" id="name"
+                               placeholder="John Doe" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put name validation error messages here -->
+                          
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">E-Mail Address</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+                        <input type="email" name="email" class="form-control" id="email"
+                               placeholder="you@example.com" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put e-mail validation error messages here -->
+                           {{#if errors}})
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>Oh snap! {{this.msg}}</strong> 
+                                </div>
+                            {{/if}}
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="email">Username</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
+                        <input type="text" name="username" class="form-control" id="username"
+                               placeholder="used to login" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put e-mail validation error messages here -->
+                        </span>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group has-danger">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+                        <input type="password" name="password" class="form-control" id="password"
+                               placeholder="Password" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <p>min 8 chars</p>
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+                <label for="password">Confirm Password</label>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem">
+                            <i class="fa fa-repeat"></i>
+                        </div>
+                        <input type="password" name="passwordConfirmation" class="form-control"
+                               id="password-confirm" placeholder="Re-Enter Password" required>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            {{#each errors}}
+                                <div class="alert alert-danger" role="alert">
+                                    <strong>{{this.msg}}</strong> 
+                                </div>
+                            {{/each}}
+                        </span>
+                </div>
+            </div>
+        </div>
+ 
+
+        <div class="row">
+            <div class="col-md-6">
+                <button type="submit" id="register" class="btn circle" name="submit"  value="register"><i class="fa fa-user-plus"></i> Register</button><br><br><br>
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+<br><br>
+
+<style type="text/css">
+#register {
+    margin-top: 24px;
+    font-size: 14px;
+    color: white;
+    background-color: blue;
+    width: 118px;
+    height: 35px;
+    text-align: center;
+    border: none;
+
+}
+label{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+</style>

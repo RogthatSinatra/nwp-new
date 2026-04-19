@@ -1,0 +1,292 @@
+
+<style type="text/css">
+
+/*#drop--area *, *::after, *::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}*/
+
+#drop--area html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+#drop--area .container {
+    padding: 3px;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#drop--area {
+    display: block;
+    width: 100%;
+    margin: 3px;
+    border: 1.5px solid #34495e;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+#drop--area.highlight {
+    border: 0.2rem dashed #34495e;
+}
+
+#file--input {
+    margin-bottom: 1rem;
+    background: blue;
+    height: 100%;
+    display: none;
+}
+
+#gallery {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+#drop--area .preview {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 3px 3px 0;
+}
+
+#drop--area .preview::before {
+    content: '';
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    border: 0.5rem solid transparent;
+    border-color: transparent transparent transparent #fff;
+    transition: all 0.5s ease-in;
+    background: transparent;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    animation: spinner 1s linear 1s infinite;
+}
+
+.progressSpan {
+    background: #2c3e50;
+    opacity: 0.6;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    z-index: 1000;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    top: 0;
+    left: 0;
+}
+
+.done {
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 3px 3px 0;
+}
+
+#drop--area img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.mainSpan {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    z-index: 1000;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.spanOne {
+    position: absolute;
+    background: red;
+    top: 2.2%;
+    right: 34%;
+    width: 11%;
+    height: 85%;
+    transform: rotate(-50deg);
+    cursor: pointer;
+}
+
+.spanTwo {
+    position: absolute;
+    background: red;
+    z-index: 2000;
+    top: 3.2%;
+    right: 34%;
+    width: 11%;
+    height: 85%;
+    transform: rotate(50deg);
+    cursor: pointer;
+}
+
+  #drop--area .button {
+   display: inline-block;
+   padding: 6px;
+   background: #000;
+   color: #fff;
+   text-transform: uppercase;
+   margin-left: 0.6rem;
+}
+#drop--area .button:hover {
+    background: #2c3e50;
+    cursor: pointer;
+}
+</style>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+const dropArea = document.getElementById('drop--area');
+
+['dragenter', 'dragover'].forEach(event => {
+    dropArea.addEventListener(event, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.classList.add('highlight');
+    });
+});
+
+['dragleave', 'drop'].forEach(event => {
+    dropArea.addEventListener(event, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        dropArea.classList.remove('highlight');
+    });
+});
+
+dropArea.addEventListener('drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    let dt = e.dataTransfer;
+    let files = dt.files;
+    handleFiles(files).then(result => {
+        console.log(result.children)
+    })
+});
+
+function handleFiles(files) {
+    return new Promise((resolve, reject) => {
+        const Files = Array.from(files);
+        const createFileId = (length) => {
+            let str = "";
+            for (; str.length < length; str += Math.random().toString(36).substr(2));
+            return str.substr(0, length);
+        }
+        Files.forEach(file => {
+            file.id = createFileId((Math.round(file.lastModified * 100) / file.lastModified));
+            uploadFile(file);
+            previewFile(file);
+        });
+
+        resolve(document.getElementById('gallery'));
+    })
+}
+
+function previewFile(file) {
+    const reader = new FileReader();
+    //console.log('file:id', file.id)
+    reader.readAsDataURL(file);
+    reader.onloadend = function() {
+        const img = document.createElement('img');
+        const fig = document.createElement('figure');
+        const spanOne = document.createElement('span');
+        const spanTwo = document.createElement('span');
+        const mainSpan = document.createElement('span');
+        const progressSpan = document.createElement('span');
+        fig.classList.add('preview');
+        img.classList.add('img');
+        mainSpan.classList.add('mainSpan');
+        spanOne.classList.add('spanOne');
+        spanTwo.classList.add('spanTwo');
+        progressSpan.classList.add('progressSpan'); 
+        progressSpan.id = file.id;
+        mainSpan.onclick = function(e) {
+            this.parentElement.remove();
+        }
+        img.src = reader.result;
+        [spanOne, spanTwo].forEach(item => {
+            mainSpan.appendChild(item);
+        });
+        [img, mainSpan, progressSpan].forEach(item => {
+            fig.appendChild(item);
+        });
+        document.getElementById('gallery').appendChild(fig);
+    }
+}
+
+function uploadFile(file) {
+    const config = {
+        headers: { "X-Requested-With": "XMLHttpRequest" },
+        onUploadProgress: function(progressEvent) {
+            let progress = Math.round((progressEvent.loaded * 100.0) / progressEvent.total);
+            if (document.getElementById(`${file.id}`) !== null) {
+                document.getElementById(`${file.id}`).style.height = `${100 - progress}%`;
+            }
+        }
+    }
+
+    var anImage = document.getElementById("anImage")
+    if(anImage){
+    anImage.remove()
+}
+    //add cloudinary url
+    var cloud_name = "royal-palms" || process.env.cloud_name;
+    const url = 'https://api.cloudinary.com/v1_1/' + cloud_name + '/upload';
+    const data = new FormData();
+    data.append("upload_preset", "nationwide"); //append cloudinary specific config
+    data.append('folder', "assets");
+    data.append('file', file);
+    axios.post(url, data, config).then(res => {
+        if (res.data) {
+            const uploadedImgData = res.data;
+            const imgTag = document.getElementById(`${file.id}`).previousSibling.previousSibling;
+
+            var compressed = uploadedImgData.url.substring(0, 50)
+            var aUrl = uploadedImgData.url.substring(50);
+            compressed = compressed+'/w_950,f_auto'+aUrl;
+            imgTag.src = compressed;            
+            
+            document.getElementById("mainimage").value = compressed;
+            $('#mainimage').val(compressed).trigger('input');
+
+
+            imgTag.dataset.data = JSON.stringify(uploadedImgData);
+            document.getElementById(`${file.id}`).parentElement.classList.remove('preview');
+            document.getElementById(`${file.id}`).parentElement.classList.add('done');
+            //console.log(imgTag);
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+}
+</script>
+<style type="text/css">
+    form{
+        padding: 20px;
+    }
+ h3, label{
+    color:#222;
+    }
+
+</style>

@@ -1,0 +1,71 @@
+{{>preload}}
+
+<style type="text/css">
+   .post-featured-image p.main-caption{
+   font-size: 15px;
+    line-height: 1;
+    font-weight: 300;
+    margin-top: 15px;
+    color: #ccc; 
+}
+</style>
+ <!-- tp-offcanvus-area-end -->
+            <div class="post-single-area mt-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 single-blog-content">
+                            <div class="post-single-wrapper">
+                                <div class="post-cat-box">
+                                    <a href="/c/{{article.category}}" class="activey">{{article.category}}</a>
+                                </div>
+                                <h1 class="post-title">
+                                    {{article.title}}
+                                </h1>
+                                <!-- <div class="blog-small-excerpt-box">
+                                    <p>{{trimString article.summary 200}}</p>
+                                </div> -->
+                                <div class="post-bottom-meta-list post-meta-wrapper">
+                                    <div class="post-left-details-meta">
+                                        <div class="post-meta-author-box">
+                                            By <a href="/a/{{hyphen article.author}}">{{hyphen article.author}}</a>
+                                        </div>
+                                        <div class="post-meta-date-box">
+                                           {{dateFormat article.date}}
+                                        </div>
+                                    </div>
+                                    <div class="post-meta-social">
+                                       Share  <a href="https://www.addtoany.com/share" class="a2a_dd"><i class="fal fa-share"></i></a>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class="theme-blog-details">
+                                {{{article.body}}}
+                            
+                 
+     
+                                          <div class="post-meta-social">
+                                            SHARE
+                                            <a href="https://www.addtoany.com/share" class="a2a_dd"><i class="fal fa-share"></i></a>
+                                        </div> 
+                       
+                        
+                            </div>
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+          
+
+<!-- AddToAny BEGIN -->
+<script>
+var a2a_config = a2a_config || {};
+a2a_config.onclick = 1;
+a2a_config.num_services = 5;
+a2a_config.prioritize = [ 'x', 'facebook', 'whatsapp', 'linkedin', 'copy_link' ];
+</script>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

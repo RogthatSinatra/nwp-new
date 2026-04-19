@@ -1,0 +1,7 @@
+Disallow:
+User-agent: *
+Disallow: /admin
+Disallow: /users/register
+Disallow: /users/login
+Disallow: /privacy-policy
+Disallow: /comments-policy

@@ -1,0 +1,237 @@
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/c6c1e18601.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/froala_editor.min.css">
+
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home section" id="home">
+    <div class="home__container container grid">
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <span class="anchor" id="formUserEdit"></span>
+            <a href="/admin"> <img src="/images/logo.png" width="100"></a>
+            {{#each error}}
+            <div class="alert alert-danger" role="alert">
+                <strong>{{this.msg}}</strong>
+            </div>
+            {{/each}}
+
+            {{#if message}}
+            <div class="alert alert-success" role="alert">
+                <strong>{{message}}</strong>
+            </div>
+            {{/if}}
+
+                  <div align="right" class="mb-3"><a onclick="history.back()" class="pointer text-secondary"><i class="fa fa-arrow-left"></i> Go Back</a></div>
+            <!-- form user info -->
+            <div class="card card-outline-secondary">
+                <form class="form" role="form" autocomplete="off" method="POST" action="/properties/{{property._id}}/update">
+                <div class="card-header">
+                    <h4 class="mb-0"><img src="/images/bio/{{user.display_name}}" class="biopic2" width="30" height="30" style="border-radius: 50%;"> New Property &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+                    <div align="right"><button type="submit" class="btn btn-secondary btn-sm">UPDATE</button></div>
+                  
+                </div><br/>
+                <div class="card-block ">
+                    
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Title*</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="title" name="title" placeholder="Enter title" required value="{{property.title}}">
+                          
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Property Type
+
+*</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="pType" name="pType" placeholder="Eg. Single Family Home" required value="{{property.pType}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Price
+
+*</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="price" name="price" placeholder="eg. $225,000/250,000" required value="{{property.price}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Location*</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id="location" name="location" placeholder="eg. Royal Palms Estate, Kampala, Uganda
+
+" required value="{{property.location}}"><br/>
+<input class="form-control" type="text" id="map" name="map" placeholder="Google map </Iframe>
+
+" value="{{property.map}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Category*</label>
+                            <div class="col-lg-9">
+                                <select  class="form-control" name="category" size="0">
+                                	<option value="{{property.category}}">{{property.category}}</option>
+                                    <option value="rent">Rent</option>
+                                    <option value="sale">Sale</option>
+                                </select>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Agent*</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" name="agent" size="0">
+                                	<option value="{{property.agent}}">{{property.agent}}</option>
+                                     <option value="Andrew Epenu">Andrew Epenu</option>
+                                     <option value="Judith Namata">Judith Namata</option>
+                                </select>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group row">
+                       <div class="input-group">
+                        <label class="col-lg-2 col-form-label form-control-label">Size*</label>
+                       	<input title="Size" class="form-control" value="{{property.size}}" type="text" id="size" name="size" placeholder="size" required>
+                        <label class="col-lg-2 col-form-label form-control-label">Floors*</label>
+                       	<input title="Floors" class="form-control" value="{{property.floors}}" type="number" id="floors" name="floors" placeholder="Floors" required>
+                        <label class="col-lg-2 col-form-label form-control-label">Year Built*</label>
+                       	<input title="Year Built" class="form-control" value="{{property.year}}" type="number" id="year" name="year" placeholder="Year Built" required>
+                       </div>
+
+                       <div class="input-group mt-4">
+                        <label class="col-lg-2 col-form-label form-control-label">Bathrooms*</label>
+                       	<input title="Bathrooms" class="form-control" value="{{property.bath}}" type="text" id="bath" name="bath" placeholder="Bathrooms" required>
+                        <label class="col-lg-2 col-form-label form-control-label">Bedrooms*</label>
+                       	<input title="Bedrooms" class="form-control" value="{{property.bed}}" type="number" id="bed" name="bed" placeholder="Bedrooms" required>
+                       </div>
+                   </div>
+                       
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Description*</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control editor"  name="description" placeholder="Enter your text here." rows="100" required>{{{property.description}}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input type="link" name="mainimage" value="{{property.mainimage}}" class="form-control"  placeholder="Select main image below" required id="alsoMain" hidden>
+
+                                    <input type="text"  class="form-control" id="mainimage" oninput="return addImages()" hidden>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                
+                                <div class="container">
+                        <div id="drop--area">
+                            <form class="form" id="form">
+                                <input type="file" id="file--input" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                <label for="file--input" class="button jFiler-input-choose-btn btn btn-inverse waves-effect waves-light"><i class="far fa fa-upload"></i> Images</label>
+                                <div id="gallery">
+                                	{{#each property.images}}
+
+<figure class="done" id="{{this._id}}"><img class="img" src="{{this.uri}}" title="Double click to set as mainimage" ondblclick="setAsMainImage(this)"><span class="mainSpan" onclick="removeImg(`{{this._id}}`)" title="delete image"><span class="spanOne"></span><span class="spanTwo"></span></span><span class="progressSpan" id="{{@index}}" style="height: 0%;"></span></figure>
+{{/each}}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                                <div id="canvas" title="main image">
+                                    <img src="{{property.mainimage}}" id="canvasImg" width="400">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /form user info -->
+        </div>
+        <!--/col-->
+    </div>
+</div>
+</div>
+</section>
+</main>
+<script type="text/javascript" src="/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="/js/cloudinary.js"></script>
+<style type="text/css">
+#canvas {
+    width: 200px;
+}
+
+#canvasImg{
+    border-radius: 12px;
+}
+.form-group {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+  h4  {
+  color: black;
+}
+
+p{
+    color: #808080 !important;
+}
+</style>
+<script type="text/javascript">
+   function addImages() {
+        var inputValue = $('#mainimage').val();
+        $.ajax({
+            url: '/properties/images/{{property._id}}', 
+            type: 'POST',
+            data: { uri: inputValue }, 
+            success: function(response) {
+                console.log('added.');
+              
+            },
+            error: function(xhr, status, error) {
+                console.error('Error occurred while sending the request.');
+            }
+        });
+    };
+
+// allow changing of main image
+function setAsMainImage(imageElement) {
+  var mainImage = document.getElementById('canvasImg');
+  var alsoMain = document.getElementById('alsoMain');
+  alsoMain.value = imageElement.src;
+  mainImage.src = imageElement.src;
+}
+
+</script>
+<script>
+    function removeImg(id) {
+        var element = document.getElementById(id);
+        if (element) {
+            element.remove()
+            $.ajax({
+            url: '/properties/images/remove/{{property._id}}', 
+            type: 'POST',
+            data: { id: id}, 
+            success: function(response) {
+                console.log('removed.');
+              
+            },
+            error: function(xhr, status, error) {
+                console.error('Error occurred while sending the request.');
+            }
+        });
+        }
+    }
+</script>
+{{>upload2}}

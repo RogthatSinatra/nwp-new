@@ -1,0 +1,1 @@
+import{k as r}from"./app-DartEBnr.js";function a(t,n){const s=r(t),e=new AbortController,o={passive:!0,...n,signal:e.signal};return[s,o,()=>e.abort()]}export{a as s};

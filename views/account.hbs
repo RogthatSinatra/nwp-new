@@ -1,0 +1,100 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<section class="sectionx">
+    <div class="section__mask"></div> 
+    <div class="container">
+        <div class="block-region-top">
+            <a href="/admin"> <img src="/images/logo.png" width="100"></a>
+            <div> 
+
+                    {{#if message}}
+                    <script type="text/javascript">
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: '{{message}}',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                    </script>
+                    {{/if}}
+                </div>
+
+                <div class="cta-left">
+                    <h4><span  title="{{categories.length}} categories"><img src="/images/bio/{{user.display_name}}" width="50" class="biopic3"></span> {{user.display_name}} </h4>
+                    <p class="text-secondary">USERNAME: {{user.username}}  <br/>{{user.email}}</p>
+                </div>
+                <form action="/users/change-password" role="form" method="POST">
+                        <div class="form-group row">
+                         	
+                            <div class="col-lg-9"><br>
+                                <input  class="password form-control mb-2" name="newPassword" type="text" required="true" placeholder="New Password">
+<input  class="password form-control mb-2" name="confirmPassword" type="password" required="true" placeholder="Confirm New Password">
+
+<input  class="password form-control mb-2" name="currentPassword" type="password" required="true" placeholder="Enter Current Password">
+
+                                <!-- <textarea rows="10" placeholder="Your bio"></textarea> -->
+                                {{#if error}}
+                                <p class="text-danger">{{error}}</p>
+                                {{/if}}
+                                  <button type="submit" class="btn btn-secondary">UPDATE PASSWORD</button>
+                                
+                            </div>
+                        </div>
+
+                    </form>
+                    <a onclick="history.back()" class="pointer"><i class="far fa-arrow-left"></i> Go Back</a>
+                <div class="roll"><br/>
+                    {{#if categories}}
+                    {{#each categories}}
+
+                    <p><h5>{{this.name}}&nbsp;<a href="/categories/delete/{{this._id}}" onclick="return confirm('Delete this category?');"><i class="far fa-trash" style="color: red;"></i></a></h5> </p>
+                    <br />
+                    {{/each}}
+                    {{/if}}
+                </div>
+
+                <style type="text/css">
+ p a{
+    color: orange
+  }
+
+  p a:hover{
+    color: #000;
+  }
+
+  h5 {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  resize: horizontal;
+}
+
+.sectionx{
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.header-img{
+    animation: skeleton-loading 1s linear infinite alternate;
+    object-fit: cover;
+    width: 90px;
+  height: 90px;
+  border-radius: 6px;
+
+}
+
+/***Skeleton loading 1.0**/
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+.lasuccess {background-color: #f28421; color: white; border-radius: 20; padding: 8px;}
+
+</style>

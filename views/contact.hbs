@@ -1,0 +1,122 @@
+<div id="app">
+    {{>navbar}}
+    <main id="main" class="main spacer-xxxl">
+        <div class="contact-template spacer-xxxl container-content padding-top-banner">
+            <section class="contact-template-intro">
+                <div class="contact-template-intro-grid">
+                    <div class="contact-template-intro-content">
+                        <div class="contact-template-intro-heading has-sweep-fade" style="--reveal: 1;">
+                            <h1 class="subheading-m text-medium-1">Contact</h1>
+                            <h2 class="heading-l gradient-accent-1">Get in touch</h2>
+                        </div>
+                        <p class="text-m text-dark-1">From expert advice to personalized solutions—NWP’s agents have you covered. Get in touch and let’s get started!</p>
+                    </div>
+                    <div class="contact-template-intro-form">
+                        <div class="light-contact-form" x-data="{ formSent: false }" x-on:contact-form-submitted.window="formSent = true">
+                            <h2 class="heading-m text-body light-contact-form-title" x-show="!formSent">Contact Us</h2>
+                            <div wire:snapshot="{&quot;data&quot;:{&quot;type&quot;:&quot;residential&quot;,&quot;lang&quot;:&quot;en&quot;,&quot;componentId&quot;:&quot;contact-page&quot;,&quot;name&quot;:&quot;&quot;,&quot;email&quot;:&quot;&quot;,&quot;phone&quot;:&quot;&quot;,&quot;message&quot;:&quot;Hello. I am looking for a home\/commercial space in Volta SKAI. I would like to receive more information.&quot;,&quot;newsletter&quot;:true,&quot;formSent&quot;:false,&quot;successTitle&quot;:&quot;Thank you!&quot;,&quot;successMessage&quot;:&quot;Thank you for your interest in Volta SKAI! Our client relations manager will be in touch shortly to talk more about living in a home with a sense of future!&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;MAalJKcqFClJwvgO2vR3&quot;,&quot;name&quot;:&quot;contact-form&quot;,&quot;path&quot;:&quot;en\/contact&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;release&quot;:&quot;a-a-a&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en_GB&quot;},&quot;checksum&quot;:&quot;fca1ae17e90955dbc7a0fbea575859b9d6f9eddcfd15593f0b6856aa5d1b93aa&quot;}" wire:effects="{&quot;listeners&quot;:[&quot;setContactFormMessage&quot;,&quot;setContactFormType&quot;]}" wire:id="MAalJKcqFClJwvgO2vR3" class="contact-form-wrapper">
+                                <!--[if BLOCK]><![endif]-->
+                                <form action="#" class="livewire-component" wire:submit="submitForm" novalidate="" data-tracking-type="contact" data-tracking-category="residential" data-tracking-id="contact-page-contact-residential" data-tracking-section="content_section">
+                                    <div class="form-floating margin-bottom-20">
+                                        <input class="form-control" type="text" id="footer-contact-form-name" placeholder="Name" wire:model.blur="name" autocomplete="name" required="required">
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]--> <label for="footer-contact-form-name">Name</label>
+                                    </div>
+                                    <div class="form-floating margin-bottom-20">
+                                        <input class="form-control" type="email" id="footer-contact-form-email" placeholder="Email address" wire:model.blur="email" autocomplete="email" required="required">
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]--> <label for="footer-contact-form-email">Email address</label>
+                                    </div>
+                                    <div class="form-floating margin-bottom-20">
+                                        <input class="form-control" type="text" id="footer-contact-form-phone" placeholder="Phone number" wire:model.blur="phone" autocomplete="tel" required="required">
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]--> <label for="footer-contact-form-phone">Phone number</label>
+                                    </div>
+                                    <div class="form-floating margin-bottom-20">
+                                        <textarea data-lenis-prevent="" class="form-control" id="footer-contact-form-message" wire:model="message" placeholder="Message" rows="3"></textarea>
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if BLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]-->
+                                        <!--[if ENDBLOCK]><![endif]--> <label for="footer-contact-form-message">Message</label>
+                                    </div>
+                                    <button class="btn text-uppercase btn-primary position-relative" type="submit">Send
+                                    </button>
+                                </form>
+                                <!--[if ENDBLOCK]><![endif]-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-template-intro-contacts">
+                    <article class="contact-card-portrait">
+                        <div class="contact-card-portrait-image">
+                            <img src="/images/team/4.webp" alt="Andrew" loading="eager" decoding="async" width="730" height="883" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 0.82672706681767" fetchpriority="high">
+                        </div>
+                        <div class="contact-card-portrait-content">
+                            <div class="contact-card-portrait-content-titles">
+                                <p class="heading-s text-dark-1">Andrew</p>
+                                <p class="subheading-m text-medium-1">Head of Sales</p>
+                            </div>
+                            <div class="contact-card-portrait-contact-info">
+                                <a href="tel:+256755555009" class="text-m text-decoration-underline" data-tracking-click="contact_phone" data-tracking-type="link" data-tracking-section="hero">
+                                    +256 755555 009
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <address class="contact-template-intro-company text-s text-dark-1 fst-normal">
+                    <span>Nationwide Properties</span>
+                    <span>65 Yusuf Lule Rd</span>
+                    <a href="mailto:sales@property.co.ug" class="text-decoration-underline" data-tracking-click="contact_email" data-tracking-type="link" data-tracking-section="content_section">sales@property.co.ug</a>
+                    <a href="tel:+256755555009" class="text-decoration-underline" data-tracking-click="contact_phone" data-tracking-type="link" data-tracking-section="content_section">(+256) 75 5555 009</a>
+                </address>
+            </section>
+            <section class="newsletter-section" data-bs-theme="dark" data-header-theme="light">
+                <div class="newsletter-section-content gradient-dark-2">
+                    <div class="newsletter-section-content-body" x-show="!subscribed">
+                        <header>
+                            <h2 class="heading-m text-accent-light-3 newsletter-section-content-title">THE GARDENS</h2>
+                            <p class="text-m text-light-1 newsletter-section-content-content">Introducing The Royal Palm Gardens (2024) where luxury living meets tranquility. It’s the perfect place to call Home. </p>
+                            <p class="text-m text-light-1 newsletter-section-content-content">Our 3 and 2 bedroom Apartments offer Spacious, Aesthetically designed homes in a Secure Environment with Modern Amenities and a Prime Location</p>
+                            <button class="book-a-meeting-content-button btn btn-primary" aria-label="The gardens">
+          View
+        </button>
+                        </header>
+                    </div>
+                </div>
+                <figure class="newsletter-section-image">
+                    <img src="/images/plan.jpg" alt="royal palm gardens" loading="lazy" decoding="async" width="2489" height="1400" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7778571428571">
+                </figure>
+            </section>
+            <section>
+                <div class="two-column two-column--end two-column--reverse two-column--content-536 " data-header-theme="light" data-bs-theme="light">
+                    <div class="two-column-grid">
+                        <div class="two-column-content">
+                            <div class="two-column-cta">
+                                <div class="two-column-cta-heading">
+                                    <h2 class="heading-m two-column-cta-subtitle">Royal Palms Butabika</h2>
+                                </div>
+                                <p class="text-m two-column-cta-content">Royal Palms Butabika is designed as a self-contained gated community with lifestyle amenities, The estate includes detached houses, villas, and apartments, typically ranging from 3 to 5 bedrooms</p>
+                                <div class="read-more read-more--medium read-more-bordered read-more-width-327 read-more-text-left " data-bs-theme="light" role="group" style="--content-opacity: 1; --line-scale: 1;">
+                                    <span class="subheading-m text-medium-1 read-more-label d-block">Read more</span> <a class="heading-s read-more-link" href="/royal-palms" target="" data-tracking-type="link">
+                                        <span class="read-more-link-text" style="background-size: 100% 2px;">More about its amenities and community.</span>
+                                    </a> </div>
+                            </div>
+                        </div>
+                        <div class="two-column-image ">
+                            <img src="/projects/1.webp" alt="villa" loading="lazy" decoding="async" width="3500" height="1969" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    {{>footer2}}
+</div>

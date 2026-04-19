@@ -1,0 +1,295 @@
+<style type="text/css">
+	/* Begin float */
+
+.float {
+  position:fixed;
+  bottom:92px;
+  right:24px;
+  text-align:center;
+  z-index:1000;
+}
+
+.float .trigger {
+  border-radius:50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  position:relative;
+  background:#b83434;
+  color:#fff;
+  height:60px;
+  width:60px;
+  vertical-align:middle;
+  animation: 1.5s linear 0s infinite normal pulse;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+.float .trigger:hover{
+  transform:scale(1.1);
+}
+
+.float.open .trigger .fa::before{
+  content: "\f00d";
+}
+
+.float .trigger .fa::after{
+  transition: ease-in-out 1s;
+}
+
+.fab.open .trigger i{
+  transition: all 0.4s ease;
+  transform: translateY(5px) rotate(360deg);
+}
+
+.float i{
+  font-size:28px;
+  line-height:58px;
+}
+
+.float .actions{
+  opacity:0;
+  transition: opacity 0.4s ease;
+}
+
+.float.open .actions{
+  opacity:1;
+}
+
+.float .p-info{
+  position: absolute;
+  opacity:0;
+  transition: transform 0.4s ease;
+  transition: all 0.4s ease;
+  transform: translateY(-156px);
+  right:60px;
+  width:100%;
+  height:auto;
+}
+
+.float.open .p-info{
+  opacity:1;
+  position: absolute;
+  transition: transform 0.4s ease;
+  transition: all 0.4s ease;
+  transform: translateY(-186px);
+  right:60px;
+  width:40px;
+  height:40px;
+  
+}
+
+.float .p-phone a{
+  position: absolute;
+  top: 0;
+  background: #fff;
+  color: #333;
+  height: 60px;
+  width: 60px;
+  line-height: 40px;
+  transition: transform 0.4s ease;
+  transform: translateY(50px);
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  right:-50px;
+  opacity:0
+  transition-delay:0.2s;
+}
+
+.float.open .p-phone a{
+  position: absolute;
+  top: 0;
+  background: #fff;
+  color: #333;
+  height: 60px;
+  width: 60px;
+  line-height: 40px;
+  transition: transform 0.4s ease;
+  transform: translateY(50px);
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  right:10px;
+  transition-delay:0.2s;
+}
+
+.float.open .p-phone a:hover{
+  background:#25d366;
+  color:white;
+}
+
+.float .p-whatsapp a{
+  position: absolute;
+  opacity:0;
+  background: #fff;
+  color: #333;
+  height: 60px;
+  width: 60px;
+  line-height: 40px;
+  transition: transform 0.4s ease;
+  right: 80px;
+  transform: translateY(50px);
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  right:-50px;
+  transition-delay:0.3s;
+  transform-origin: right center 0;
+}
+
+.float.open .p-whatsapp a{
+  position: absolute;
+  top: 0;
+  opacity:1;
+  background: #fff;
+  color: #333;
+  height: 60px;
+  width: 60px;
+  line-height: 40px;
+  transition: transform 0.4s ease;
+  right: 80px;
+  transform: translateY(50px);
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  transition-delay:0.2s;
+}
+
+.float.open .p-whatsapp a:hover{
+  background:#25d366;
+  color:white;
+
+}
+
+.float .p-image{
+  top:100px;
+  position: absolute;
+  right:-65px;
+  transition: all 0.4s ease;
+  transition: transform 0.4s ease;
+  border-radius:50%;
+}
+
+.float.open .p-image{
+ 
+}
+
+.float .p-image img{
+  top:0;
+  position: absolute;
+  right:3px;
+  transition: all 0.4s ease;
+  border-radius:50%;
+  transform: translateY(20px);
+}
+
+.float.open .p-image img{
+  top:0;
+  position: absolute;
+  right:3px;
+  transition: all 0.4s ease;
+  border-radius:50%;
+  transform: translateY(-50px);
+}
+
+.float .p-tooltip {
+  position: absolute;
+  right:0;
+  transition-delay:0.3s;
+  transform-origin: right center 0;
+  transition: all 0.8s ease;
+  transform: translateY(50%) scale(0);
+  top: 0;
+  right: -50px;
+  width: 25vw;
+  line-height:5px;
+  border-radius:25px;
+}
+
+.float.open .p-tooltip{
+  right:155px;
+  font-size: 16px;
+  line-height:5px;
+  opacity:1;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  width:25vw;
+  height:55px;
+  border-radius:25px;
+  transform:translateY(52px);
+   transition-delay:0.3s;
+}
+
+.float .p-tooltip p{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.float.open .p-tooltip p{
+  font-size:16px;
+  font-weight:bold;
+}
+
+
+
+.float .actions .p-info:nth-child(1){
+ transform: translateY(-190px)
+}
+
+.float .actions .p-info:nth-child(2){
+ transform: translateY(-260px)
+}
+
+.float .actions .p-info:nth-child(3){
+ transform: translateY(-330px)
+}
+
+.float .actions .p-info:nth-child(4){
+ transform: translateY(-400px)
+}
+
+.float .actions .p-info:nth-child(5){
+ transform: translateY(-470px)
+}
+
+.float .actions .p-info:nth-child(6){
+ transform: translateY(-540px)
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+      box-shadow: 0px 1px 0px 3px #ab1a1a30, 0px 0px 0px 0px #ef242450;
+    }
+    30% {
+      box-shadow: 0px 1px 0px 3px #ab1a1a30, 0px 0px 0px 5px #ef242450;
+    }
+    70% {
+      box-shadow: 0px 1px 0px 3px #ab1a1a30, 0px 0px 0px 15px #ef242410;
+    }
+    100% {   
+      box-shadow: 1px 1px 2px 1px #ab1a1a30, 0px 0px 0px 20px transparent;
+    }
+  }
+</style>
+<div class="float">
+  <div class="trigger">
+    <i class="fa fa-commenting" aria-hidden="true"></i>
+  </div>
+  <div class="actions">
+    
+    <div class="p-info">
+      
+      <div class="p-phone">
+        <a href="tel:+256755555009">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="p-whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=2567755555009">
+          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</div>

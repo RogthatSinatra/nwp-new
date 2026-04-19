@@ -1,0 +1,170 @@
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/c6c1e18601.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/froala_editor.min.css">
+
+  <main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home section" id="home">
+    <div class="home__container container grid">
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <span class="anchor" id="formUserEdit"></span>
+            <a href="/admin"> <img src="/images/logo.png" width="100"></a>
+            {{#each errors}}
+            <div class="alert alert-danger" role="alert">
+                <strong>Oh snap! {{this.msg}}</strong>
+            </div>
+            {{/each}}
+
+                  <div align="right" class="mb-3"><a onclick="history.back()" class="pointer text-secondary"><i class="fa fa-arrow-left"></i> Go Back</a></div>
+            <!-- form user info -->
+            <div class="card card-outline-secondary">
+                <form class="form" role="form" autocomplete="off" method="POST" action="/posts/add">
+                <div class="card-header">
+                    <h4 class="mb-0"><img src="/images/bio/{{user.display_name}}" class="biopic2" width="30" height="30" style="border-radius: 50%;"> New Article &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+                    <div align="right"><button type="submit" class="btn btn-secondary btn-sm">Post</button></div>
+                  
+                </div><br/>
+                <div class="card-block ">
+                    
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Title*</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" id ="title" name="title" placeholder="Enter title" required oninput="addslug()"><br>
+                                <input class="form-control" type="text" id ="permalink" name="permalink" placeholder="Permanent-link" required hidden>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"><a title="add category" href="/categories/add">Category*</a></label>
+                            <div class="col-lg-9">
+                                <select id="user_time_zone" class="form-control" name="category" size="0">
+                                    {{#each categories}}
+                                    <option value="{{this.name}}">{{this.name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Author*</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" name="author" size="0">
+                                    <option value="{{user.display_name}}">{{user.display_name}}</option>
+                                    
+                                    {{#each users}}
+                                    <option value="{{this.display_name}}">{{this.display_name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Summary*</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control" maxlength="300" name="summary" placeholder="Summary of article max 300..." rows="2" required></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Body*</label>
+                            <div class="col-lg-9">
+                                <textarea class="form-control editor" name="body" placeholder="Enter your text here." rows="100" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Featured</label>
+                            <div class="col-lg-9">
+                                <div class="form-group">
+                                    <input type="link" name="mainimage" class="form-control" id="mainimage" placeholder="Select main image below" required autofocus oninput="updateImage()" hidden>
+
+                                    <input type="text" name="credit"  class="form-control" placeholder="photo credit" value="" id="credit">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <input type="hidden" name="mainimagefalse" id="exampleInputFile" aria-describedby="fileHelp">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                
+                                <div class="container">
+                        <div id="drop--area">
+                            <form class="form" id="form">
+                                <input type="file" id="file--input" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                <label for="file--input" class="button jFiler-input-choose-btn btn btn-inverse waves-effect waves-light"><i class="far fa fa-upload"></i> Main Image</label>
+                                <div id="gallery"></div>
+                            </form>
+                        </div>
+                    </div>
+                                <canvas id="canvas">
+                                    Sorry. Your browser does not support HTML5 canvas element.
+                                </canvas>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /form user info -->
+        </div>
+        <!--/col-->
+    </div>
+</div>
+</div>
+</section>
+</main>
+
+<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="/js/froala_editor.min.js"></script>
+<script type="text/javascript" src="/js/cloudinary.js"></script>
+<style type="text/css">
+#canvas {
+    width: 200px;
+}
+
+.form-group {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+  h4  {
+  color: black;
+}
+
+p{
+    color: #808080 !important;
+}
+</style>
+<script type="text/javascript">
+function updateImage() {
+    var x = document.getElementById("mainimage").value;
+    // GET THE IMAGE.
+    var img = new Image();
+    img.src = x;
+    // WAIT TILL IMAGE IS LOADED.
+    img.onload = function() {
+        fill_canvas(img); // FILL THE CANVAS WITH THE IMAGE.
+    }
+
+    function fill_canvas(img) {
+        // CREATE CANVAS CONTEXT.
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        ctx.drawImage(img, 0, 0); // DRAW THE IMAGE TO THE CANVAS.
+    }
+}
+</script>
+<script type="text/javascript" src="/js/sligify.js"></script>
+
+{{>upload}}

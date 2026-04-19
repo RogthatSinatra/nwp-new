@@ -1,0 +1,128 @@
+{{>navbar}}
+<style type="text/css">
+ 
+@media all{
+body.frontend .section-news .post{width:100%;padding-bottom:40px;}
+@media only screen and (min-width:576px){
+body.frontend .section-news .post{width:45%;}
+}
+@media only screen and (min-width:992px){
+body.frontend .section-news .post{width:40%;}
+body.frontend .section-news .post:nth-child(odd){margin-right:5rem;}
+}
+@media only screen and (min-width:1170px)and (max-width:1366px){
+body.frontend .section-news .post{width:42%;}
+}
+body.frontend .section-news .post__header img{width:100%;max-height:200px;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;margin:0 auto;border-top-left-radius:30px;border-top-right-radius:30px;-o-object-position:top;object-position:top;-o-object-fit:cover;object-fit:cover;}
+body.frontend .section-news .post__body{padding-top:20px;font-size:13px;letter-spacing:.3px;}
+@media only screen and (min-width:1024px){
+body.frontend .section-news .post__body{font-size:13px;}
+}
+@media only screen and (min-width:1024px)and (min-width:1024px){
+body.frontend .section-news .post__body{font-size:calc(2.10638px + 1.06383vw);}
+}
+@media only screen and (min-width:1024px)and (min-width:1400px){
+body.frontend .section-news .post__body{font-size:17px;}
+}
+body.frontend .section-news .post__footer{padding-top:16px;}
+body.frontend .section-news .more__posts{padding-top:22px;position:relative;}
+@media only screen and (min-width:375px){
+body.frontend .section-news .more__posts{padding-top:calc(9.28814px + 3.38983vw);}
+}
+@media only screen and (min-width:1024px){
+body.frontend .section-news .more__posts{padding-top:44px;}
+}
+body.frontend .section-news .more__posts .load-text{position:relative;background:#bcc8cc;padding:12px 20px 9px;background-color:#bcc8cc;letter-spacing:.73px;font-size:12px;border-radius:20px;text-transform:uppercase;cursor:pointer;}
+@media only screen and (min-width:1024px){
+body.frontend .section-news .more__posts .load-text{font-size:calc(6.55319px + .53191vw);}
+}
+@media only screen and (min-width:1400px){
+body.frontend .section-news .more__posts .load-text{font-size:14px;}
+}
+body.frontend .section-news .more__posts .load-text:focus,body.frontend .section-news .more__posts .load-text:hover{color:#2c4351;background-color:#d3dde0;}
+body.frontend .section-news .more__posts .load-text span{display:block;}
+body.frontend .section-news .more__posts .load-text .loading{display:inline-block;position:absolute;width:61px;height:61px;top:-14px;left:0;right:0;margin:0 auto;visibility:hidden;}
+body.frontend .section-news .more__posts .load-text .loading div{display:inline-block;position:absolute;top:0;left:6px;width:12px;background:#2c4351;-webkit-animation:vertical-lines 1.2s cubic-bezier(0,.5,.5,1) infinite;animation:vertical-lines 1.2s cubic-bezier(0,.5,.5,1) infinite;}
+body.frontend .section-news .more__posts .load-text .loading div:first-child{left:6px;-webkit-animation-delay:-.24s;animation-delay:-.24s;}
+body.frontend .section-news .more__posts .load-text .loading div:nth-child(2){left:26px;-webkit-animation-delay:-.12s;animation-delay:-.12s;}
+body.frontend .section-news .more__posts .load-text .loading div:nth-child(3){left:45px;-webkit-animation-delay:0;animation-delay:0;}
+}
+/*! CSS Used keyframes */
+@-webkit-keyframes intro{0%{transform:scaleX(1);}to{transform:scaleX(0);}}
+@keyframes intro{0%{transform:scaleX(1);}to{transform:scaleX(0);}}
+@-webkit-keyframes move-down{0%{transform:translateY(-100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes move-down{0%{transform:translateY(-100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@-webkit-keyframes fade-in{0%{opacity:0;}to{opacity:1;}}
+@keyframes fade-in{0%{opacity:0;}to{opacity:1;}}
+@-webkit-keyframes move-up{0%{transform:translateY(25%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes move-up{0%{transform:translateY(25%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@-webkit-keyframes vertical-lines{0%{top:6px;height:51px;}50%,to{top:19px;height:26px;}}
+@keyframes vertical-lines{0%{top:6px;height:51px;}50%,to{top:19px;height:26px;}}
+
+</style>
+<div class="site-inner" id="main-content"><div class="wrap"><div class="content-area"><main class="site-main" id="genesis-content" style="padding-top: 58px;"><article class="type-page entry" aria-label="Press"><div class="entry-content">
+<div class="section-vertical-space">
+    <div class="section-vertical-space__desktop d-none d-xl-block" style="height: 70px"></div>
+    <div class="section-vertical-space__tablet d-none d-md-block d-xl-none" style="height: 52px"></div>
+    <div class="section-vertical-space__mobile d-md-none" style="height: 50px"></div>
+</div>
+
+
+
+<div class="section-news">
+    <div class="container">
+    <div class="inner d-md-flex justify-content-between">
+
+
+        <div class="col-left">
+            <h1 class="title small h2 pb-5 inview-animate--move-up anim-delay-05 inview-active">News &amp; Updates</h1>
+        </div>
+
+        <div class="col-right">
+            <div class="posts d-flex flex-wrap justify-content-between justify-content-lg-start" data-total="5">
+
+{{#each posts}}
+<div id="post-1247" class="post inview-animate--move-up-delay inview-active">
+
+    <div class="post__header">
+    <a href="{{this.permalink}}"><img loading="lazy" decoding="async" width="1336" height="824" data-src="{{this.mainimage}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazy" alt="{{this.title}}"></a>
+    </div>
+
+    <div class="post__body">
+        <a href="{{this.permalink}}" >{{this.title}}</a>
+    </div>
+
+    <div class="post__footer">
+        
+    </div>
+
+</div>
+{{/each}}
+
+
+</div><!-- <div class="more__posts d-flex justify-content-center align-items-center inview-animate--move-up-delay inview-active">
+                                <div class="load-text">
+                                    <span>View More</span>
+                                    <div class="loading"><div></div><div></div><div></div></div>
+                                </div>
+                            </div>   -->    </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="section-vertical-space">
+    <div class="section-vertical-space__desktop d-none d-xl-block" style="height: 160px"></div>
+    <div class="section-vertical-space__tablet d-none d-md-block d-xl-none" style="height: 140px"></div>
+    <div class="section-vertical-space__mobile d-md-none" style="height: 80px"></div>
+</div>
+</div></article>
+</main>
+</div>
+</div>
+</div>
+
+{{>footer}}
