@@ -715,7 +715,7 @@ router.get("/royal-palms/apartments-nakasero", async (req, res, next) => {
             Ogurl: "/royal-palms/apartments-nakasero",
         };
         res.render("p/apartments/1", {
-            title: "Royal Palms Mulago Apartments",
+            title: "Royal Palms Nakasero Apartments",
             royalpalms:'is-active active',
             bath: "2",
             t:"19",

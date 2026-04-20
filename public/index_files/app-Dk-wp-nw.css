@@ -23180,7 +23180,7 @@ body:has(.form-modal.is-open) #wpadminbar {
     cursor: url(/wp-content/themes/nwp/public/build/assets/zoom-out-BdQ9vXky.svg) 24 24, zoom-out !important
 }
 
-@media(min-width:768px) {
+/*@media(min-width:768px) {
     .fancybox__carousel:after {
         content: "";
         position: fixed;
@@ -23205,9 +23205,9 @@ body:has(.form-modal.is-open) #wpadminbar {
 
 .f-panzoom__content {
     background: #ebdcd0
-}
+}*/
 
-.fancybox__container {
+/*.fancybox__container {
     --f-video-bg: #f4ebe4;
     --after-inset: 10px;
     --after-border-radius: 8px;
@@ -23279,7 +23279,7 @@ body:has(.form-modal.is-open) #wpadminbar {
         padding-top: 3.7037037037rem !important;
         padding-bottom: 3.7037037037rem !important
     }
-}
+}*/
 
 @media(min-width:1728px) {
     .fancybox__slide {
@@ -25712,7 +25712,7 @@ body:has(.form-modal.is-open) #wpadminbar {
     width: 19.0625rem;
     transform: translate(-50%) rotate(180deg);
     aspect-ratio: 431/701;
-    background-image: url(/wp-content/themes/nwp/public/build/assets/layered-team-CFOwD9Da.webp);
+    background-image: url(/images/layered-team-CFOwD9Da.webp);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1
