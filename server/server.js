@@ -120,6 +120,18 @@ hbs.registerHelper('reverse', function(arr) {
     arr.reverse();
 });
 
+hbs.registerHelper('createPhotos', function(n, block) {
+    let accum = '';
+    for (let i = 0; i < n; ++i) {
+        // Set the index (starting at 0 or 1 depending on your preference)
+        // Here we use i for the data-index and i + 1 for the image filename
+        accum += block.fn({
+            index: i,
+            imageNumber: i + 1
+        });
+    }
+    return accum;
+});
 
 //ifCond
 hbs.registerHelper('ifCond', function(v1, operator, v2, opts) {
