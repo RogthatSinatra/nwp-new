@@ -25,9 +25,27 @@ router.get("/", async (req, res, next) => {
             Ogurl: "",
         };
         res.render("index", {
-            title: "Nation wide Properties",
+            title: "Nationwide Properties (NWP)",
             home:'is-active active',
             bodyClass: "home page-template-default page page-id-13 wp-embed-responsive en header-full-width full-width-content genesis-breadcrumbs-hidden safari mobile-device iphone osx frontend"
+        });
+    } catch (err) {
+        next(err);
+    }
+});
+
+router.get("/gallery", async (req, res, next) => {
+    try {
+        res.locals.metaTags = {
+            summary: "Nationwide Properties builds Uganda's most premium residential estate Homes. Arrange your viewing today!",
+            keywords: ", nationwide properties Uganda",
+            Ogimg: "/images/wa.png",
+            Ogurl: "gallery",
+        };
+        res.render("gallery", {
+            title: "Gallery | Nationwide Properties",
+            gallery:'is-active active',
+            bodyClass: "wp-singular page-template page-template-template-gallery page page-id-2147 wp-embed-responsive wp-theme-nwp lang-en gallery"
         });
     } catch (err) {
         next(err);

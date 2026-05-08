@@ -1,0 +1,386 @@
+<div id="app">
+    {{>navbar}}
+    <main id="main" class="main spacer-xxxl">
+        <div class="gallery-template spacer-xxl container-content padding-top-banner" data-header-theme="light">
+            <section class="gallery-section" id="aries" aria-labelledby="section-aries">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-aries" style="--reveal: 1;">Gallery (The Royal Palms)</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <a class="subheading-m gallery-navigation-item is-active" href="#aries">
+                            Aries Court
+                        </a> <a class="subheading-m gallery-navigation-item" href="#leo">
+                            Leo Court
+                        </a> <a class="subheading-m gallery-navigation-item" href="#taurus">
+                            Taurus Court
+                        </a> <a class="subheading-m gallery-navigation-item" href="#virgo">
+                            Virgo Court
+                        </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                            Kawalya
+                        </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                            Mulago
+                        </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                            Okrut
+                        </a>
+                        <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                            Nakasero
+                        </a>
+                        <a class="subheading-m gallery-navigation-item" href="#community">
+                            Community
+                        </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="Aries gallery">
+                    <a href="/pics/aries/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 1" data-section-index="0" data-image-index="0"  data-aspect-ratio="1.77778 / 1">
+                        <img src="/pics/aries/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="Aries court royal palms" loading="lazy" decoding="async" width="4000" height="2250" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7777777777778">
+                    </a>
+                    {{#createPhotos 12}}
+                    <a href="/pics/aries/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--landscape" style="grid-row-end: span 189;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="0" data-image-index="{{index}}"  data-aspect-ratio="1.77755 / 1">
+                        <img src="/pics/aries/{{imageNumber}}.webp" sizes="(min-width: 1860px) 402px, (min-width: 1280px) calc(19.11vw + 50px), (min-width: 800px) 21.96vw, 43.54vw" alt="Aries court royal palms" loading="lazy" decoding="async" width="3500" height="1969" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
+                    </a>{{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="leo" aria-labelledby="section-leo">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-leo" style="--reveal: 0;">Leo Court</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item is-active" href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="leo gallery">
+                    <a href="/pics/leo/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="1" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/leo/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="leo courts" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 16}}
+                    <a href="/pics/leo/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="2" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/leo/{{imageNumber}}.webp" alt="Leo courts Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="taurus" aria-labelledby="section-taurus">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-taurus" style="--reveal: 0;">Taurus Court</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item is-active" href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item " href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="taurus gallery">
+                    <a href="/pics/taurus/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="2" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/taurus/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="taurus courts" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 14}}
+                    <a href="/pics/taurus/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="2" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/taurus/{{imageNumber}}.webp" alt="taurus courts Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbataurus0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="virgo" aria-labelledby="section-virgo">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-virgo" style="--reveal: 0;">Virgo Court</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item is-active" href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="virgo gallery">
+                    <a href="/pics/virgo/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="3" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/virgo/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="virgo courts" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    <a href="https://vimeo.com/1190533970" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 189;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="3" data-image-index="1"  data-aspect-ratio="1.77778 / 1">
+                        <div class="video-embed-wrapper" style="width: 100%; height: 100%; position: relative; overflow: hidden; pointer-events: none;">
+                            <iframe class="video-embed" src="https://player.vimeo.com/video/1190533970?background=1&amp;autoplay=1&amp;loop=1&amp;byline=0&amp;title=0&amp;muted=1&amp;dnt=1" frameborder="0" allow="autoplay; fullscreen" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            </iframe>
+                        </div>
+                    </a>
+                    {{#createPhotos 23}}
+                    <a href="/pics/virgo/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="3" data-image-index="{{addOne index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/virgo/{{imageNumber}}.webp" alt="virgo courts Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbavirgo0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="kawalya-kaggwa" aria-labelledby="section-kawalya-kaggwa">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-kawalya-kaggwa" style="--reveal: 0;">kawalya Kaggwa Apartments</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item " href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item is-active" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="kawalya gallery">
+                    <a href="/pics/kawalya/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="4" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/kawalya/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="kawalya courts" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 28}}
+                    <a href="/pics/kawalya/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="4" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/kawalya/{{imageNumber}}.webp" alt="kawalya kaggwa apartments Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbakawalya0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="mulago" aria-labelledby="section-mulago">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-mulago" style="--reveal: 0;">Mulago Royal palms Condos</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item " href="#virgo">
+                                Virgo
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item is-active" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry " aria-label="mulago gallery">
+                    <a href="/pics/mulago/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="5" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/mulago/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="Mulago condos and apartments  Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 16}}
+                    <a href="/pics/mulago/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="5" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/mulago/{{imageNumber}}.webp" alt="Mulago condos and apartments  Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbamulago0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="okrut" aria-labelledby="section-okrut">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-okrut" style="--reveal: 0;">The Royal Palms Okrut close</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item " href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item is-active" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="okrut gallery">
+                    <a href="/pics/okrut/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="6" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/okrut/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="okrut close apartments Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 27}}
+                    <a href="/pics/okrut/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="6" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/okrut/{{imageNumber}}.webp" alt="okrut close apartments Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbaokrut0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="nakasero" aria-labelledby="section-nakasero">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-nakasero" style="--reveal: 0;">Baker close Nakasero</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item " href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item is-active" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="baker gallery">
+                    <a href="/pics/baker/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="7" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/baker/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="Baker close Royal Palms apartments" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 19}}
+                    <a href="/pics/baker/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="7" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/baker/{{imageNumber}}.webp" alt="Baker close Royal Palms apartments" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbabaker0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+            <section class="gallery-section" id="community" aria-labelledby="section-community">
+                <div class="gallery-section-header">
+                    <h2 class="heading-l gradient-accent-1 has-sweep-fade" id="section-community" style="--reveal: 0;">The Royal Palms Community facilities</h2>
+                    <nav class="gallery-navigation" aria-label="Gallery sections">
+                        <nav class="gallery-navigation" aria-label="Gallery sections">
+                            <a class="subheading-m gallery-navigation-item " href="#aries">
+                                Aries Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#leo">
+                                Leo Court
+                            </a>
+                            <a class="subheading-m gallery-navigation-item " href="#taurus">
+                                Taurus Court
+                            </a> <a class="subheading-m gallery-navigation-item " href="#virgo">
+                                Virgo Court
+                            </a> <a class="subheading-m gallery-navigation-item" href="#kawalya-kaggwa">
+                                Kawalya
+                            </a> <a class="subheading-m gallery-navigation-item" href="#mulago">
+                                Mulago
+                            </a> <a class="subheading-m gallery-navigation-item" href="#okrut">
+                                Okrut
+                            </a>
+                            <a class="subheading-m gallery-navigation-item" href="#nakasero">
+                                Nakasero
+                            </a>
+                            <a class="subheading-m gallery-navigation-item is-active" href="#community">
+                                Community
+                            </a></nav>
+                </div>
+                <div class="gallery-section-masonry masonry-ready" aria-label="community gallery">
+                    <a href="/pics/community/main.webp" class="gallery-section-masonry-item gallery-section-masonry-item--hero" style="grid-row-end: span 426;" data-fancybox="gallery" aria-label="aria_label_view_image_number 2" data-section-index="8" data-image-index="0"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/community/main.webp" sizes="(min-width: 1840px) 814px, (min-width: 800px) 44vw, 88vw" alt="community gems" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url({{>blur}}); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{#createPhotos 11}}
+                    <a href="/pics/community/{{imageNumber}}.webp" class="gallery-section-masonry-item gallery-section-masonry-item--portrait" style="grid-row-end: span 224;" data-fancybox="gallery" aria-label="aria_label_view_image_number 3" data-section-index="8" data-image-index="{{index}}"  data-aspect-ratio="1.49945 / 1">
+                        <img src="/pics/community/{{imageNumber}}.webp" alt="gems school Royal Palms estate" loading="lazy" decoding="async" width="2750" height="1834" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.4994547437296">
+                        <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAE5klEQVRIiVWW7W4dOQ5Eq4pU23Hm/Z9tgX2IxdiZJL4SWftDat9Mo6EW0BIPP0SK/M9//wcAsG273XWPBZe74bYbNmHYgGEQhmEbbpyN7e527YnPLuSWvQGwNwtnP4yvx3sZfe+Agf3xXunnLp9/cFYXfO/3Jp9hW4U+e5/4o8G9wD4qbxvc7luEnbXW0e9fjIZ7+wdu4Lji6aib4T4u6uOZejJg2znn/NMDN2NLbLv5lH7m3IB72VZ7G7GfL/Vt5+Px+XTyHQDbQOM4fUe44T0/MNxW7ggfEzaqv3zn/Pz9+xnHP77c4824dW+46UK33ThH7kt6d3+F0W0DyF+/fgIEgf0hAXCPAGECRNPmFu1GF1zocpe7+mbc7ncbbRzAz58/j0SSICiKpAiKIElY2wg3XeyCF7rcy12utYWX3e2yq9FG45zy/PnPD2wCRcUeJYmiJFKAYOFIpxd6oaZ7uVb36qraELuMMspso0ED+ePHB4AjXaFIKRUZB8MgN0Bb/Z7s6Zqu6Z5ds6uqq9qrN4AFlnUAHx/vPOqnYihHxH4zIkIKMmi55aIXa6IeqIfr0fXomlWragOwzAWWVVBBBvPj/W+SW3rkFXnFeMnszM7IVIQYRKDlxb4B69P12etR67EBq3uaq7mghShEQb0BoBQZeUW+5lU5PC6PRKZHOG9AuG7AxHr0+uz52etz1VxVqz2b01qI6ShGIRrK9/e/SSlGjNdx9VgeF6tZg1fDgQ4lYXR7qRdrYU2v6fmo9Vnzd605a632bD2siVzIiSx2Q/nx/k5K+TKuGq+4mi8djbADlhNogTQ7XKoNWAcwP2s+1nrMteYBxIQnPImCm8ofHx9kxLWuhcvRGOAFTTIJEZQNEWi43MVVWMtr9Vw915pzrcdatcrTWvYEJzjJBTSdP//5JUUutNN6UcyIGbFSqxRFFSCjceoau9HtKnfXvx5Xe5kFLcY+0U3kfEzK5tKoXLVWVe2s7662upsNNMxdwLvR9w12ag7uEV83jw0TBtIgT9W5L5M/XrvRu0D1c/spszBpCpQZoEERAqRTaQgwx3ihlJkRETt9CdGETxXa1yS3QrskEhIoKqCAkkFuwc5wGDJFqKF8fftGRo7rernGGCNjhEIMIegD420mQQEWJEbSQ26RYoXQzXAYCQSRgWgw396+U4oY43q9rusaOUaMUIq5MYI2zNtsGQJCSLNFSBGqfVPAokM4WWYo3/76i2Qoc1xjXOMa14hraCQzkMJhkDsdSJlhpmkIEKMC1WizSSusgtrqXYve3r6TlCJzZI6RYzvqSmUy4wCCEACIkjvQ2QRESIhimW0aapYVkM2GAOTb23eQkkKRkZljZGbGSGUogzse4h0ICwq3KbLFCHZ1m2012oxmgzZtAsjXb992uY7D2JjIiBAzjnTRJAFxH9WGLbbYwW62edo7tmHT942er6/fAOgY8YVRSLGPEymB+0EDsgHR7m7RzZ2OvjupZ9NEAHm9vBwAKTK0z6jOVSNK5K5KBCDABmHagto223az4bbs06fdvWOOMXbyiBB5q8wjndQOAHeuEYBBg7Bl2bbacommunity0hdBh7FYzMxIniSggSBH7FvtT+lfXARAwwWf32jTttje3jRMo20iFTvrvOsL9PoXeE3CnMgzQZ0rAkNGGzLZpCu7TwZH4P3nZQ/kpgn23AAAAAElFTkSuQmCC); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                    </a>
+                    {{/createPhotos}}
+                </div>
+            </section>
+        </div>
+    </main>
+    {{>footer}}
+</div>

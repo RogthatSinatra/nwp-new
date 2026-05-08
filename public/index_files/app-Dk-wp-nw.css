@@ -15843,12 +15843,12 @@ body:has(.form-modal.is-open) #wpadminbar {
 
 .final-gallery-images-section__image:nth-child(3n+2) {
     aspect-ratio: 1/1;
-    height: 9.875rem
+    height: 13.5rem
 }
 
 .final-gallery-images-section__image:nth-child(3n+3) {
     aspect-ratio: 92/65;
-    height: 12.1875rem
+    height: 13.5rem
 }
 
 @media(min-width:768px) {
@@ -15859,17 +15859,17 @@ body:has(.form-modal.is-open) #wpadminbar {
 
     .final-gallery-images-section__image:nth-child(4n+2) {
         aspect-ratio: 1/1;
-        height: 15.0625rem
+        height: 23.125rem
     }
 
     .final-gallery-images-section__image:nth-child(4n+3) {
-        aspect-ratio: 92/65;
-        height: 22.0625rem
+        aspect-ratio: 1/1;
+        height: 23.125rem
     }
 
     .final-gallery-images-section__image:nth-child(4n+4) {
         aspect-ratio: 120/79;
-        height: 9.875rem
+        height: 23.125rem
     }
 }
 
@@ -15881,17 +15881,17 @@ body:has(.form-modal.is-open) #wpadminbar {
 
     .final-gallery-images-section__image:nth-child(4n+2) {
         aspect-ratio: 1/1;
-        height: 18.3796296296rem
+        height: 24.8148148148rem
     }
 
     .final-gallery-images-section__image:nth-child(4n+3) {
         aspect-ratio: 75/53;
-        height: 22.0833333333rem
+        height: 24.8148148148rem
     }
 
     .final-gallery-images-section__image:nth-child(4n+4) {
         aspect-ratio: 397/262;
-        height: 12.1296296296rem
+        height: 24.8148148148rem
     }
 }
 
@@ -15903,17 +15903,17 @@ body:has(.form-modal.is-open) #wpadminbar {
 
     .final-gallery-images-section__image:nth-child(4n+2) {
         aspect-ratio: 1/1;
-        height: 24.8125rem
+        height: 33.5rem
     }
 
     .final-gallery-images-section__image:nth-child(4n+3) {
         aspect-ratio: 75/53;
-        height: 29.8125rem
+        height: 33.5rem
     }
 
     .final-gallery-images-section__image:nth-child(4n+4) {
         aspect-ratio: 397/262;
-        height: 16.375rem
+        height: 33.5rem
     }
 }
 
