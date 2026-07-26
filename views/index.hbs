@@ -10,7 +10,7 @@
  -->
 
                       <div class="hero-image-wrapper">
-                    <img src="/the-gardens/6.avif" sizes="100vw" alt="the royal palm gardens" loading="eager" decoding="async" fetchpriority="high" width="3500" height="1969" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
+                    <img src="/the-gardens/3.avif" sizes="100vw" alt="the royal palm gardens" loading="eager" decoding="async" fetchpriority="high" width="3500" height="1969" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
                     <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADkUlEQVRIiX1WW7YjOQiThHu9s4T57DXfJEbzAX5Uus/45FRcD0sgMJi///2HgMSQfkWMEb9CI2KEQgySMGBnzpzz83l/Pu/3+/V6vV6vn5/Xz8/79Xq9fj7v9+f9zvnOOZ0TNmzCEL6G/37vP5/tNwYAG7B9f2MD0L3U1wLYNV1frje2Ye+rUZOG9xq90OMi3AwFyYflB3Nx75G2nbkvtuEsszhsA7xw2tKFRrBn61eY6bTTzkznvjgzF3pBjTaTvfihb1FfuI2edroxM3PmGdM57aQTNgGPpewl0TaWW/2Wp6Bt59eYM2cxOROetgnT4LDBMn/Hc90sfx72L0EuklkpPHPmnMiJ8qCWjiuMOLhHLnpT5Pk9bC/7Z02LQDZQEvlkTqPvaFey8Bat4/pwYIlTE+RkJVLF8CvIBGCzMuzsoUeIdxr9GWpnIhPOMgwABkwQD6H2DiX7jXlJhysaXtm54p9XAJqg1pPFaVTtWTtjCbicO+r1Tt3C+npemGBJVL7w+cM12eN+VTjXE7JuTBIyyENwVpHna6K3cT95XElSNQFFkhRlCoKcIgWI4CALuL/txRcH6TaLbKC+iqoRUkpU2IaLB0EQ0ED7dqB5c7RHIv0ElUJSKIYiNaycURFKOct8oTwg0Ysvf1H/3Nq5YClRoQjFiJgRGSNHwinAFDxlCyaaQMd5UtQlgorAsAjTDR0bfYyYOdI2jSQ9BQedAgh3DESCbdrCbWM7DnaKNkJ2eMzIMjzSI52GLWCS1oQnq9JVNxvScqBxt+2ld+eXEwbCTmeMMU6dtk3gQ4aU8yYwAQxKJFbsWK4srUVVDtMlVji6OoywR5dxAiKnZH3sgPNBcPRfScLWKMo9AK7dHzzFIlfzNZb7dMiZcALJKgpDEnYWiduJdqV3qN3Z5l1Tl/m1PUtfZ51ZctcSbokWYEvEpRhVFc9MAoxTdVZHMkoiidkpmrvpl0S4s2g7sWPeZ6+qHXHaD875pPPEYqaqZbYhax9oybiZVqbqEHAdZb7ORf2OyKRy2uyTC4DBr9Gb7GQqVeXQqrMgHIhzvDgkBGZlj2knLMA3gXgy6nqiLhi2MyHBdpWNiGiaWPbSSfSJYnnwKBX8ummabgdShbsIwspOZssRgIFgNUyDpmEMgndrWWW0C2s1gMWACpbJlJi5wyY5ZUrKhJQlWdLAwKr6XDHsrrLbG3c9hXdV/7+xltAA/gMgzC4RXsdT4QAAAABJRU5ErkJggg==); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
                 </div>
                 <div class="hero-image-overlay" aria-hidden="true"></div>
@@ -269,15 +269,12 @@
                             </div>
                             <div class="final-gallery-images-section__gallery-wrapper" data-cursor-text="Drag me">
                                 <div class="final-gallery-images-section__gallery" style="transform: translate3d(-31.5px, 0px, 0px);">
-                                    <div class="final-gallery-images-section__image" data-image-index="-3" style="transform: translate3d(0px, 0px, 0px);">
-                                        <img src="/the-gardens/3.avif" sizes="(max-width: 800px) 280px, (max-width: 1280px) 500px, 680px" alt="Royal palms estates butabika Kampala" loading="lazy" decoding="async" width="2640" height="1485" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7777777777778">
+                                    {{#createPhotos 5}}
+                                    <div class="final-gallery-images-section__image" data-image-index="{{index}}" style="transform: translate3d(0px, 0px, 0px);">
+                                        <img src="/home/{{imageNumber}}.avif" sizes="(max-width: 800px) 280px, (max-width: 1280px) 500px, 680px" alt="Royal palms estates butabika Kampala" loading="lazy" decoding="async" width="2640" height="1485" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7777777777778">
                                     </div>
-                                    <div class="final-gallery-images-section__image" data-image-index="-2" style="transform: translate3d(0px, 0px, 0px);">
-                                        <img src="/the-gardens/6.avif" sizes="(max-width: 800px) 280px, (max-width: 1280px) 500px, 680px" alt="Royal palms estates butabika Kampala" loading="lazy" decoding="async" width="2640" height="1485" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7777777777778">
-                                    </div>
-                                    <div class="final-gallery-images-section__image" data-image-index="-1" style="transform: translate3d(0px, 0px, 0px);">
-                                        <img src="/the-gardens/1.avif" sizes="(max-width: 800px) 280px, (max-width: 1280px) 500px, 680px" alt="Royal palms estates butabika Kampala" loading="lazy" decoding="async" width="2640" height="1485" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7777777777778">
-                                    </div>
+                                    {{/createPhotos}}
+                                    
                                     {{#createPhotos 13}}
                                     <div class="final-gallery-images-section__image" data-image-index="{{index}}" style="transform: translate3d(0px, 0px, 0px);">
                                         <img src="/gallery/{{imageNumber}}.webp" sizes="(max-width: 800px) 280px, (max-width: 1280px) 500px, 680px" alt="Royal palms estates butabika Kampala" loading="lazy" decoding="async" width="2640" height="1485" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7777777777778">

@@ -133,98 +133,177 @@
     object-fit: cover; 
     object-position: center;
 }
+
+.interior-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0 3rem 0;
+}
+.interior-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    aspect-ratio: 4/3;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.interior-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.interior-gallery-item:hover img {
+    transform: scale(1.05);
+}
+.interior-gallery-item {
+    cursor: pointer;
+}
+.interior-gallery-title {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Lightbox Styles */
+#interior-lightbox {
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+#interior-lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
+#interior-lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+#interior-lightbox.show img {
+    transform: scale(1);
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 100000;
+}
+.lightbox-close:hover {
+    color: #ccc;
+}
             </style>
+
+            <!-- interior photos-->
             <section class="values-template-panorama container-content">
                 <header class="container-content text-center " data-header-theme="light" data-bs-theme="light">
                     <div class="section-heading-width gradient-title-header has-sweep-fade mx-auto values-template-panorama-heading">
                         <h2 class="subheading-m">Our Offer</h2>
-                        <h3 class="heading-l gradient-accent-1">THE GARDENS</h3>
+                        <h3 class="heading-l gradient-accent-1">Interior</h3>
                     </div>
                 </header>
-                <div class="panorama-static panorama-base" data-header-theme="light">
-                    <div class="panorama-static-container panorama-canvas">
-                        <div class="panorama-static-images">
-                            <div class="panorama-static-image" data-index="0" data-active="true">
-                                <img src="/images/thegardens/3bedroom.jpg"  alt="the gardens royal palms" loading="lazy" decoding="async">
-                                <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEzElEQVRIiXVWwZIduQ0DQPZ41vuzOeSaf84la3uaBHJQv/FsqqKnqtetlgiCpEjyX//4JyX11W/v/f79ev/e79+v9z/62x/19k19qRsSqCBJ4jhOjASASKmqqrv7uq5+6+vqvqq6qig18f9GgHz5fz3/fvi6E3/7+pwJkAZChF+WnpkgARyYIIBDIAlixEEIBMKz8j8Hjx5p4nknwhgxn/PHDkYcA2QOhp34QQLIhOe0XzA+74hJNWEARyjwmjFsZOMCFwrCAM7nz0AAhnwsECGFLFOPoiCBFwBMmI/6e2a88YBBBPKobds2kmMiUERCwIIHFryIGDFE0MyCIcRH7sALz9kdEwzI4G8A8VELlAKHiYjS0exTOpMmFgkjYplhFplk4jsmHKBCBbDjF8IxEUFKQoVBMUtYsI5DGTDVxAJhhAwy8A03XDnqb5INXgDP2CRMSFIyOkyGKGKFeuwNnSjKAGLIFF8YccXMIjCsgEH2AOzDgMADEJuxmGUOAwshHaIaGULI8VLBHRdWEcww+9gneITvep2YgcitFjZyhBTTzBJLCGAAN3MDYoIIqbhg5eyAUxPIgBOvd727OQyCSHAJb4eBWxmhFRNGnEAN36DC0DoEs3KBG2KRMhhgnd3dtWftjcOgJFQXvIyLGablYerE0RcAMDCz8gpFLcAkG+kE6AMwu7PehUMgEuparBkX3fLoWMmC6KA6/gAFOsYxTpYmCKcGlkE7a+/szHjXs7EJFovXLL2iW3vLrR1tUYIZZH8DeCHRAuYknkUqlINNdr0zO7PzACiMinlbZMVtbddOeeSSxUWgau8HKMLkye6MvgCA/nTAzMzsPZ6F7ahUihfY0nY9s7SSCMBRtfcXKGZPSuEzAyxUBo3YntmHwT2eyUYQ1ExEVtV0d/d0V5VKFAJXVe/8AsVaEhQpUiCNbFQvD/thcN9735nNxlF0MVjVVs/HNX1Vf1SVik9q3+2dn6CQi4AIkiSAIIZk8Fyx2eOAe2d8DzZMQSEk3VV39T33R3WrmlLAJKrquX+ARZuBP+U/AL9NtI+J7p3xLiaMIRIzmqqpnvtjVDfVoALaUW3P/RdY8BIgJQoQCSSQTSY4GeJzZJ0NQ9iEVTuzukc97EHdoQKWo1Lf97/Bi/6TEFF8/ECc3EGePLobr9ew4QVMBCCw4US3VVYva6EJygdA6vvD4C+WmSaabHJIIUTx6OI86WdNW6eq0wUIIAcscIzbqI3WmA21OAAAgb6JH+Ib9UYtacKAn5Ib2HToyDjlF4mAgotLDngDZWjNXeyEtaGqP34BBBfMf8jv0pBLmgwBCAEDJA9A4lejpKBgjYUlJrljZenNlqkClb4PgEGaulXLsvZRHa/O5JgliFF5zE+kFhULyywzsGx4s8oBcH/8BAUEIqhRWxUqEmjy3Gwo4e+m7AQyyYgoWDAziE4ZfJUUgWLfP59sTUE9mqgjwwsJJCEdZ54S9fAigwOsoGzJ9JxSFsEyWSTZ8wNokFBDl7XRQobCmBQZnqDKCwPHP2RIpBLST5I/7YpwPGaQvT+ACyxkcG7Q7w4vPJ0bwafIvhIhgMMAD49zX2iDL/8xgdD7EzT47QjNCZpXoEDh6bzwdRIvNp+LyOm0DArwUSMM/gsiBjPQ4khQ6wAAAABJRU5ErkJggg==); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
-                            </div>
-                            <div class="panorama-static-image" data-index="1">
-                                <img src="/images/thegardens/2bedroom.jpg" alt="the gardens by royal palms" loading="lazy" decoding="async">
-                                <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAERklEQVRIiV2WS5blOA5DcUHVynsDvY9eYUY8AT2gHZmVPj7SwDIh8AOS//z3f5IE2LIZM8MMNjMaY4MxgMAGMAL2o+0ZxvZ4jMe29xhgVX8/ldrd1Wd7dqmt2vY5+PzQnz//tnX2LFJb2jW1C4+tquKBrMQPUkNlsaeqsh/YXxDiqFVVhFqqVBSi0kYVVYOkAkgQMNpzRQnm5Vqp1mNvGSQSQlKENh5CAng5Q1ugTyAQqMjPFmRUVBBVq+41dHKDkNFjXuJ5q9K2EQb6oiJqGmQYo3r9guSHBzINcHpTidLC71iuw9fNFglsru0Kqi2jmjqa0EGKZFgzQDn5XHgJzY8j3ZqxQu2i141/AxCnE7VMUb0YolrKp59bSQbDEm1psFsLZCoVftKQPWtkU6NYCQmtpcWgWy3nfn82NzDExBRqbAWZ8mRE+zvmRrY7JnZPlLq1NFKqCFcp9sn3RwhgeEzXBMYygvJHBrbr24CNxj5jZThxa/XqJTGbTiff3xKyuPiYLA8U8JPplaqmeip472M448zjnwUYddSo2YrsuV+/GTRw8AsgI1QUtVWeen2KRDYZ9wy5bkYZ9UpXsuSKkXLu17cQFheOHXog8ARAqx5pH4DVgB8A3ef60y7GvncVg3O/voQwDA49pgsgmdWgbEWkr8rJwDidcON0mo9y6FUuvarb25Y/GMxv6z68TN9667Pqh0IcnTqZrnP6oYdechWva/0vBgkOHFpkYdWr1QuQVVahQjXi1ulRL/mQQ9b6A1CV8/n6Asn48AoGCYyYR5EW4wHYarbFrY8iXTXsm+tc5aNQlNbnfn9JYpTgOMXdgtgwVJJom5/uA6voQ6pIkeLete5cXQtXCvb5fP0CKTikWC/GkrCEXvXKKjeC139vIlt141zuR3gFPphzP19ChASLyBaVKZvK8PB4Cl0yzNuWV62k23waJ9wLH0l1L/b5fH4haaAYWw62sNwlYO2KamT09nrGsWMu+khegIR7W8Ud4NzPL61P1zQ2Li5eqkatrBVWZmRrhpkuAESKettPwr2q6q5PODe/nuK/No5ncD3FsoXx0w0Mdm3O0YzmaEZ2X4zbOkFX0Qr+FZxPfgEK4GR8p55JFZOxWz1dAcvDHOb3Ks9eIyLVbegOCIlsiXP7S30MkNOkm3wdqkizHQx5NKP5NwaDp7BydVUlVVOs68K5/QJJpoem/aeRAiX1DgirJTYezzDjOZ7BgzeVrbKCS7L6mAjBiX7pSZDQf57poHZdZeeqNwIsho9nmGMbZquipVLTmzbKLRWVTvQlIc2e2dkDTZToUYYVt8f6eGzv9W3enoGapiXtLbdcqdUJC3DQjkeXxqvNrzY8FfWbxE64eOsCfibZJxTlRrdKdarvZzQVaNy8d2+lvkMYP4/fZQeR5/p/TFJV0lvdPACrHTtspH90+L+nZf58nulIvPOgnl70jgfbBPV/4FO4KBU7wakAAAAASUVORK5CYII=); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
-                            </div>
+     
+                <div class="px-content-large mx-auto">
+                    <h4 class="heading-m text-dark-1 interior-gallery-title">2 Bedroom Interior</h4>
+                    <div class="interior-gallery">
+                        <div class="interior-gallery-item">
+                            <img src="/new/2-bedroom-interior/1.avif" alt="2 Bedroom Interior" loading="lazy">
                         </div>
-                        <div class="panorama-controls panorama-radio-controls">
-                            <div class="panorama-controls-group">
-                                <label class="subheading-s panorama-controls-group-label">Switch</label>
-                                <div class="panorama-controls-group-buttons panorama-radio-buttons" role="radiogroup" aria-label="Light">
-                                    <input type="radio" name="panorama-static-scene" id="panorama-static-0" value="0" class="panorama-static-input visually-hidden" checked aria-label="Morning">
-                                    <label class="text-s panorama-radio-label" for="panorama-static-0" data-tracking-click="view_gallery" data-tracking-type="tab" data-tracking-section="content_section">3 Bedrooms</label> <input type="radio" name="panorama-static-scene" id="panorama-static-1" value="1" class="panorama-static-input visually-hidden" aria-label="Day">
-                                    <label class="text-s panorama-radio-label" for="panorama-static-1" data-tracking-click="view_gallery" data-tracking-type="tab" data-tracking-section="content_section">2 Bedrooms</label> <input type="radio" name="panorama-static-scene" id="panorama-static-2" value="2" class="panorama-static-input visually-hidden" aria-label="Evening">
-                                </div>
-                            </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/2-bedroom-interior/2.avif" alt="2 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/2-bedroom-interior/3.avif" alt="2 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/2-bedroom-interior/4.avif" alt="2 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/2-bedroom-interior/5.avif" alt="2 Bedroom Interior" loading="lazy">
                         </div>
                     </div>
-            </section>
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-    // 1. Select all the radio inputs and the image containers
-    const radioButtons = document.querySelectorAll('.panorama-static-input');
-    const imageWrappers = document.querySelectorAll('.panorama-static-image');
 
-    radioButtons.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            const selectedIndex = e.target.value;
-
-            // 2. Loop through images to update data-active
-            imageWrappers.forEach(img => {
-                if (img.getAttribute('data-index') === selectedIndex) {
-                    img.setAttribute('data-active', 'true');
-                } else {
-                    // It's cleaner to remove the attribute or set to false 
-                    // depending on how your CSS is written
-                    img.setAttribute('data-active', 'false');
-                }
-            });
-        });
-    });
-});
-            </script>
-            <section class="content-arguments" data-header-theme="light">
-                <div class="content-arguments-grid">
-                    <div class="content-arguments-content">
-                        <span class="text-l text-dark-1 mb-0 d-block"><strong>3 BEDROOM FLOOR LAYOUT PLAN</strong><br />
-                            • Apartment size Approximately 130 sqm<br />
-                            • 3 Bedrooms and 2 Bathrooms<br />
-                            • Dedicated Parking<br />
-                            • Large Laundry and Storage area<br />
-                            • Inbuilt Wardrobes<br />
-                            • Comfortable Living Room and Dining with a Balcony<br />
-                            • Large Kitchen with Utility Area</span> </div>
-                    <div class="container-content" data-header-theme="light" title="3 bedroom floor plan">
-                        <figure class="two-images-section__image">
-                            <img src="/images/thegardens/5.webp" sizes="(min-width: 1840px) 1450px, (min-width: 800px) calc(77.65vw + 37px), 130.63vw" alt="3 bed floor plan" loading="lazy" decoding="async" width="2500" height="2500" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1">
-                            <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEaUlEQVRIiV1Wy47cRhAjWT3jVxyfgvxubkF+MX9gOEGQ2N5d76rJHKpbM7ZG6JEEiawnq/n7b38ApEhJKtWoMWpc6nKpcanLtS6XMa51ud4e9jtVpf5RkkgRJHolQACEAABB3+9rIMh50Y/2kvTf3Ym7i++PYDQPESBEeHs7SBZckh9w07RZlCEIrM+B3OwdXOaT2dBxIyZO+taIY2ddN4ETAg4EGGFbutA3x2hgIoQJMmZ0giIzruwVVqx4Rkw7vFxqdH6Hnu0BAcCEGANEJkJYG+7odd8qZtwJxfqiCXaETnQQQ/BOuBmw7fKEFBOTkTKPSJ6HxIVuZtkTuABGRJgVplu9jJXeECAJGGRgZDJEzHUhhrAoMqINTYQJKwwihDG5qpLgKqqheFO2q4YLAJjMFQkTFElINCE1dDITJlCggBDhNnWlgcEg5o4dEUOKA3jVPFcEb0yEhQ6VmEwHFSroALOTDa5GGohvESNhg0wKMTCMAOb+1ns10wVHmKtA6BAdQ973QebZvgjSBnAilZjx6Q3Z5YWdFxvuMglkkFCCiG6pIAKM+Lhr7F67HyZUzEQm4rOHyXWangzpiQIEiCHIhNoEAAY8c9OcJQggQcFiKpmBWxNAbwKTBkwMpBghghRBbqIlecPzuGnK5gAQEhRd9FyagUa8FyUTRgpRLQJGjU4CZIbnS3uQ9LoUDmQoSsx0XPDyg+dpYCIzqaQSRZSoLmiiAzGO4wXY0At9yR4oqOipOLCQMOD5jhEnMxktIe7Z0OafITqOlwYMtnx2Jrq1VchQrET38o0ETuyMZNqyS+YUz8mzCF6en08P0BxNeBJ4KiZWa/gm6HY8Mp0qq1yarB2iMw3j+fl5T6sExg4RCIhQMcVEidHCD3ePxBVPz+GqkkoldQ5OD0COb9+e7tpgzaceqZRQZqyAXepAZ3aNCLs8D1eV6kYA7iiBGE+P37q3dgMssN4GIFantp+BMxC6aFye5Vlze1Bt/l2UgPH4+Li0lAHBBU2WWGLCQN0U4OmHHNkql+feXUjF70NEEuPrlwec94KKLKmkUXQprZ6TFDEJKWQgh47KmqoVHVatEOksU2J8/u9L9yylGtJQXaouQ4FC0aIFk62ac7WaQ1uzljVSifcenBzj30//UOSouo5xHePVZczLCCosqrr5Gc7WiYkQOeBwmrswF26xVg7uCP76+DeBAVzevr58eHf96c01uFKDNZShaG/W9qZmJgGThjlWa0msWtAS2g8A408AwHvg/cPTu4fnN7/iDWtqvGqB8Z6H3kUc2z0ynb1TZCMK3WglnIIxuoQ+A5+Bt/Avnx58fZ2rcV27rPKaJiDiODBtrJxk70Pb6jrX3QoDd8cD8NGPejz0NppRw4QJGcYIM4nZKkqsScQ1PtqD6nX79h0BgCfgy9f56kMuE8PoWZ69BpjAgRzJARzIBIxAoFFa52gCsbP74/HlyT+7xxh7CJwbNacnACZwJC/IsYQPVCqocAQOSlQg8n/fA6KhBiZqqwAAAABJRU5ErkJggg==); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
-                        </figure>
-                    </div>
-                </div><br />
-                <div class="content-arguments-grid">
-                    <div class="content-arguments-content">
-                        <span class="text-l text-dark-1 mb-0 d-block"><strong>2 BEDROOM FLOOR LAYOUT PLAN</strong><br />
-                            • Apartment size Approximately 112 sqm<br />
-                            • 2 Bedrooms and 2 Bathrooms<br />
-                            • Dedicated Parking Space<br />
-                            • Large Laundry and Storage Area<br />
-                            • Inbuilt Wardrobes<br />
-                            • Comfortable Living Room and Dining with a Balcony<br />
-                            • Large Kitchen with Utility Area</span> </div>
-                    <div class="container-content" data-header-theme="light" title="2 bedroom floor plan">
-                        <figure class="two-images-section__image">
-                            <img src="/images/thegardens/4.webp" sizes="(min-width: 1840px) 1450px, (min-width: 800px) calc(77.65vw + 37px), 130.63vw" alt="3 bed floor plan" loading="lazy" decoding="async" width="2500" height="2500" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1">
-                            <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEaUlEQVRIiV1Wy47cRhAjWT3jVxyfgvxubkF+MX9gOEGQ2N5d76rJHKpbM7ZG6JEEiawnq/n7b38ApEhJKtWoMWpc6nKpcanLtS6XMa51ud4e9jtVpf5RkkgRJHolQACEAABB3+9rIMh50Y/2kvTf3Ym7i++PYDQPESBEeHs7SBZckh9w07RZlCEIrM+B3OwdXOaT2dBxIyZO+taIY2ddN4ETAg4EGGFbutA3x2hgIoQJMmZ0giIzruwVVqx4Rkw7vFxqdH6Hnu0BAcCEGANEJkJYG+7odd8qZtwJxfqiCXaETnQQQ/BOuBmw7fKEFBOTkTKPSJ6HxIVuZtkTuABGRJgVplu9jJXeECAJGGRgZDJEzHUhhrAoMqINTYQJKwwihDG5qpLgKqqheFO2q4YLAJjMFQkTFElINCE1dDITJlCggBDhNnWlgcEg5o4dEUOKA3jVPFcEb0yEhQ6VmEwHFSroALOTDa5GGohvESNhg0wKMTCMAOb+1ns10wVHmKtA6BAdQ973QebZvgjSBnAilZjx6Q3Z5YWdFxvuMglkkFCCiG6pIAKM+Lhr7F67HyZUzEQm4rOHyXWangzpiQIEiCHIhNoEAAY8c9OcJQggQcFiKpmBWxNAbwKTBkwMpBghghRBbqIlecPzuGnK5gAQEhRd9FyagUa8FyUTRgpRLQJGjU4CZIbnS3uQ9LoUDmQoSsx0XPDyg+dpYCIzqaQSRZSoLmiiAzGO4wXY0At9yR4oqOipOLCQMOD5jhEnMxktIe7Z0OafITqOlwYMtnx2Jrq1VchQrET38o0ETuyMZNqyS+YUz8mzCF6en08P0BxNeBJ4KiZWa/gm6HY8Mp0qq1yarB2iMw3j+fl5T6sExg4RCIhQMcVEidHCD3ePxBVPz+GqkkoldQ5OD0COb9+e7tpgzaceqZRQZqyAXepAZ3aNCLs8D1eV6kYA7iiBGE+P37q3dgMssN4GIFantp+BMxC6aFye5Vlze1Bt/l2UgPH4+Li0lAHBBU2WWGLCQN0U4OmHHNkql+feXUjF70NEEuPrlwec94KKLKmkUXQprZ6TFDEJKWQgh47KmqoVHVatEOksU2J8/u9L9yylGtJQXaouQ4FC0aIFk62ac7WaQ1uzljVSifcenBzj30//UOSouo5xHePVZczLCCosqrr5Gc7WiYkQOeBwmrswF26xVg7uCP76+DeBAVzevr58eHf96c01uFKDNZShaG/W9qZmJgGThjlWa0msWtAS2g8A408AwHvg/cPTu4fnN7/iDWtqvGqB8Z6H3kUc2z0ynb1TZCMK3WglnIIxuoQ+A5+Bt/Avnx58fZ2rcV27rPKaJiDiODBtrJxk70Pb6jrX3QoDd8cD8NGPejz0NppRw4QJGcYIM4nZKkqsScQ1PtqD6nX79h0BgCfgy9f56kMuE8PoWZ69BpjAgRzJARzIBIxAoFFa52gCsbP74/HlyT+7xxh7CJwbNacnACZwJC/IsYQPVCqocAQOSlQg8n/fA6KhBiZqqwAAAABJRU5ErkJggg==); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
-                        </figure>
+                    <h4 class="heading-m text-dark-1 interior-gallery-title">3 Bedroom Interior</h4>
+                    <div class="interior-gallery">
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/1.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/2.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/3.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/4.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/5.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/6.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/7.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
+                        <div class="interior-gallery-item">
+                            <img src="/new/3-bedroom-interior/8.avif" alt="3 Bedroom Interior" loading="lazy">
+                        </div>
                     </div>
                 </div>
+
+                <!-- Lightbox Element -->
+                <div id="interior-lightbox">
+                    <span class="lightbox-close">&times;</span>
+                    <img id="lightbox-img" src="" alt="Full view">
+                </div>
+
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const lightbox = document.getElementById('interior-lightbox');
+                    const lightboxImg = document.getElementById('lightbox-img');
+                    const closeBtn = document.querySelector('.lightbox-close');
+                    const galleryItems = document.querySelectorAll('.interior-gallery-item img');
+
+                    galleryItems.forEach(img => {
+                        img.addEventListener('click', function() {
+                            lightboxImg.src = this.src;
+                            lightbox.classList.add('show');
+                        });
+                    });
+
+                    closeBtn.addEventListener('click', function() {
+                        lightbox.classList.remove('show');
+                    });
+
+                    lightbox.addEventListener('click', function(e) {
+                        if (e.target !== lightboxImg) {
+                            lightbox.classList.remove('show');
+                        }
+                    });
+                });
+                </script>
             </section>
+     
             <section>
                 <div class="px-content-large container-content hcs">
                     <article class="heading-content hcs-heading-content" data-header-theme="light">
@@ -306,7 +385,7 @@
                 </header>
                 <figure aria-hidden="true" class=" expanding-image  " data-bs-theme="light">
                     <div class="expanding-image-asset" data-header-theme="dark">
-                        <img src="/the-gardens/3.avif" s sizes="100vw" alt="the royal palm gardens" loading="lazy" decoding="async" width="3500" height="1972" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
+                        <img src="/new/royal-palms.avif" sizes="100vw" alt="the royal palm gardens" loading="lazy" decoding="async" width="3500" height="1972" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
                         <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADKUlEQVRIiXWWSQLrNgxDAcbn+4ve/yrh64KD5PxWC9lJHIAAB9n//Pkjq5d3tyxZtu26yrYlS7b32V4ICQFCIIFqC/3n8qF730kXuuvD/YB/Pvjx9Wc04dWNe79uj44XIZLr/5IRloWw9NxPeq8+u5fDHfKxiLXnZdfhR49vOzbI0GIPusMdr23RZiCMsQSyzy5ZRjzHtjUkGs+244fo8p3eMexeGTadZG8ONtIYjrAjYphiDKvQDnpVDstRJQQWYK1Fo912hB21F4Nr/5tgYj7XrEspMDTBiD/eREQ4ZvdF0Bmjw1+CZJAhxfbBs0EVQAMW9GcIyq1RcAhADa2GZu2hRB4Fm4OKOCIi4rOEm2m5i3xatqCBTNzhDwGMAmtT68b0p0XE5qIJcOmv9BpIEmwSPDoqR8801inH4YiTiGYsBVFpWIJC9SogW1MRXGW6LXU1V9s1RasWUVMFVOgJTmwyU0cDeKtIOx+0Bb+KNustT+4aRFiFnkaZspxTrIB4NInTDA2fpm7ii2l6bjgAp9I405JxKqu0ysHnGhTSe05KZyJfCfoVkcZJ1qOZPUUykbCeM0QLuwdkT5XaDtcoqcoogqokGQ24Uw69FXinbDdK//NFcZH0vN1YskJDikJKpyTpeXkysNX6BkNsvtqq41e5FJfYEBD2NMvrwOnHBErkzAxHkkFwnyr+EQEkYVHoESCbksdR0AohkVJyKp220xkZGQXAxdIFgAOkbHT2Jyz/KgA5ka0Mf/NrOyOTDBJi0Ld6Jdtkqrpy0W0bIx5WAEeGvlCnYjFEZt6ZUM+87ZmgEuKwsNmKvxSc0W5hxXRG4Ue+OZZhzuduQc6oqcO5csCWZR+rFjKt4BsRn6iJWf15ML3hXqbp6tdne2urcY4Pd11GfjK/5KcZpp6m7d+tPpNnuvc5vgtEZh9/thGy45vfD5+Zj28KzxyQjH0RjoZNclkkyASUspH1zYj8ZK116Fqv98CVMz8xjcaxSO2EkcLOTPIK/+o5X26zX9ivJDxboS+aaqhMRxR+MuH3i/SlYUL3DMx7/b5dTx2dU7Xbr8uLX4D/eQXfu38BuakF3wvb+uoAAAAASUVORK5CYII=); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
                     </div>
                 </figure>
