@@ -9,9 +9,66 @@
                     </video> </div>
  -->
 
-                      <div class="hero-image-wrapper">
-                    <img src="/the-gardens/3.avif" sizes="100vw" alt="the royal palm gardens" loading="eager" decoding="async" fetchpriority="high" width="3500" height="1969" style="object-fit: cover; object-position: 50% 50%; width: 100%; height: 100%; aspect-ratio: 1.7775520568817">
-                    <span class="image-blurhash-placeholder" style="background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADkUlEQVRIiX1WW7YjOQiThHu9s4T57DXfJEbzAX5Uus/45FRcD0sgMJi///2HgMSQfkWMEb9CI2KEQgySMGBnzpzz83l/Pu/3+/V6vV6vn5/Xz8/79Xq9fj7v9+f9zvnOOZ0TNmzCEL6G/37vP5/tNwYAG7B9f2MD0L3U1wLYNV1frje2Ye+rUZOG9xq90OMi3AwFyYflB3Nx75G2nbkvtuEsszhsA7xw2tKFRrBn61eY6bTTzkznvjgzF3pBjTaTvfihb1FfuI2edroxM3PmGdM57aQTNgGPpewl0TaWW/2Wp6Bt59eYM2cxOROetgnT4LDBMn/Hc90sfx72L0EuklkpPHPmnMiJ8qCWjiuMOLhHLnpT5Pk9bC/7Z02LQDZQEvlkTqPvaFey8Bat4/pwYIlTE+RkJVLF8CvIBGCzMuzsoUeIdxr9GWpnIhPOMgwABkwQD6H2DiX7jXlJhysaXtm54p9XAJqg1pPFaVTtWTtjCbicO+r1Tt3C+npemGBJVL7w+cM12eN+VTjXE7JuTBIyyENwVpHna6K3cT95XElSNQFFkhRlCoKcIgWI4CALuL/txRcH6TaLbKC+iqoRUkpU2IaLB0EQ0ED7dqB5c7RHIv0ElUJSKIYiNaycURFKOct8oTwg0Ysvf1H/3Nq5YClRoQjFiJgRGSNHwinAFDxlCyaaQMd5UtQlgorAsAjTDR0bfYyYOdI2jSQ9BQedAgh3DESCbdrCbWM7DnaKNkJ2eMzIMjzSI52GLWCS1oQnq9JVNxvScqBxt+2ld+eXEwbCTmeMMU6dtk3gQ4aU8yYwAQxKJFbsWK4srUVVDtMlVji6OoywR5dxAiKnZH3sgPNBcPRfScLWKMo9AK7dHzzFIlfzNZb7dMiZcALJKgpDEnYWiduJdqV3qN3Z5l1Tl/m1PUtfZ51ZctcSbokWYEvEpRhVFc9MAoxTdVZHMkoiidkpmrvpl0S4s2g7sWPeZ6+qHXHaD875pPPEYqaqZbYhax9oybiZVqbqEHAdZb7ORf2OyKRy2uyTC4DBr9Gb7GQqVeXQqrMgHIhzvDgkBGZlj2knLMA3gXgy6nqiLhi2MyHBdpWNiGiaWPbSSfSJYnnwKBX8ummabgdShbsIwspOZssRgIFgNUyDpmEMgndrWWW0C2s1gMWACpbJlJi5wyY5ZUrKhJQlWdLAwKr6XDHsrrLbG3c9hXdV/7+xltAA/gMgzC4RXsdT4QAAAABJRU5ErkJggg==); background-size: cover; background-position: 50% 50%;" aria-hidden="true"></span>
+                      <div class="hero-image-wrapper hero-carousel" id="heroCarousel" style="position:relative;overflow:hidden;width:100%;height:100%;">
+                    <div class="hero-carousel-slides" style="position:relative;width:100%;height:100%;">
+                        <div class="hero-carousel-slide is-active" style="position:absolute;inset:0;transition:opacity 1.2s ease;opacity:1;">
+                            <img src="/the-gardens/3.avif" sizes="100vw" alt="the royal palm gardens" loading="eager" decoding="async" fetchpriority="high" width="3500" height="1969" style="object-fit:cover;object-position:50% 50%;width:100%;height:100%;">
+                        </div>
+                        <div class="hero-carousel-slide" style="position:absolute;inset:0;transition:opacity 1.2s ease;opacity:0;">
+                            <img src="/the-gardens/2.avif" sizes="100vw" alt="the royal palm gardens" loading="lazy" decoding="async" width="3500" height="1969" style="object-fit:cover;object-position:50% 50%;width:100%;height:100%;">
+                        </div>
+                        <div class="hero-carousel-slide" style="position:absolute;inset:0;transition:opacity 1.2s ease;opacity:0;">
+                            <img src="/the-gardens/4.avif" sizes="100vw" alt="the royal palm gardens" loading="lazy" decoding="async" width="3500" height="1969" style="object-fit:cover;object-position:50% 50%;width:100%;height:100%;">
+                        </div>
+                        <div class="hero-carousel-slide" style="position:absolute;inset:0;transition:opacity 1.2s ease;opacity:0;">
+                            <img src="/the-gardens/5.avif" sizes="100vw" alt="the royal palm gardens" loading="lazy" decoding="async" width="3500" height="1969" style="object-fit:cover;object-position:50% 50%;width:100%;height:100%;">
+                        </div>
+                    </div>
+                    <div class="hero-carousel-dots" style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;gap:0.5rem;z-index:10;">
+                        <button class="hero-carousel-dot is-active" data-index="0" aria-label="Slide 1" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.9);cursor:pointer;padding:0;transition:background 0.3s,transform 0.3s;"></button>
+                        <button class="hero-carousel-dot" data-index="1" aria-label="Slide 2" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.4);cursor:pointer;padding:0;transition:background 0.3s,transform 0.3s;"></button>
+                        <button class="hero-carousel-dot" data-index="2" aria-label="Slide 3" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.4);cursor:pointer;padding:0;transition:background 0.3s,transform 0.3s;"></button>
+                        <button class="hero-carousel-dot" data-index="3" aria-label="Slide 4" style="width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.4);cursor:pointer;padding:0;transition:background 0.3s,transform 0.3s;"></button>
+                    </div>
+                    <script>
+                        (function() {
+                            var carousel = document.getElementById('heroCarousel');
+                            var slides = carousel.querySelectorAll('.hero-carousel-slide');
+                            var dots = carousel.querySelectorAll('.hero-carousel-dot');
+                            var current = 0;
+                            var timer;
+
+                            function goTo(index) {
+                                slides[current].style.opacity = '0';
+                                dots[current].style.background = 'rgba(255,255,255,0.4)';
+                                dots[current].style.transform = '';
+                                current = index;
+                                slides[current].style.opacity = '1';
+                                dots[current].style.background = 'rgba(255,255,255,0.9)';
+                                dots[current].style.transform = 'scale(1.3)';
+                            }
+
+                            function next() {
+                                goTo((current + 1) % slides.length);
+                            }
+
+                            function start() {
+                                timer = setInterval(next, 5000);
+                            }
+
+                            dots.forEach(function(dot, i) {
+                                dot.addEventListener('click', function() {
+                                    clearInterval(timer);
+                                    goTo(i);
+                                    start();
+                                });
+                            });
+
+                            // Set initial dot scale
+                            dots[0].style.transform = 'scale(1.3)';
+                            start();
+                        })();
+                    </script>
                 </div>
                 <div class="hero-image-overlay" aria-hidden="true"></div>
                 <h1 class="heading-xl hero-image-title" data-animate="split-lines" data-split-initialized="true"><span class="reveal" style="opacity: 1; transform: translateY(0px);">NWP</span><span class="reveal" style="opacity: 1; transform: translateY(0px);"></span><span class="reveal" style="opacity: 1; transform: translateY(0px);"></span></h1>
