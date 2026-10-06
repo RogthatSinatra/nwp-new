@@ -994,7 +994,7 @@ body>.os-scrollbar {
 
 @font-face {
     font-family: Specter;
-    src: url(/wp-content/themes/nwp/public/build/assets/specter-book-BfgSIM4h.woff2) format("woff2");
+    src: url(/wp-content/themes/nwp/public/build/assets/breaking-main.woff2) format("woff2");
     font-weight: 450;
     font-style: normal;
     font-display: swap
@@ -1002,7 +1002,7 @@ body>.os-scrollbar {
 
 @font-face {
     font-family: Specter;
-    src: url(/wp-content/themes/nwp/public/build/assets/specter-medium-yi8JGFaG.woff2) format("woff2");
+    src: url(/wp-content/themes/nwp/public/build/assets/breaking-medium.woff2) format("woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -1010,7 +1010,7 @@ body>.os-scrollbar {
 
 @font-face {
     font-family: TT Ramillas;
-    src: url(/wp-content/themes/nwp/public/build/assets/tt-ramillas-light-Dl1n1pDb.woff2) format("woff2");
+    src: url(/wp-content/themes/nwp/public/build/assets/gr-amedeus-light.woff2) format("woff2");
     font-weight: 300;
     font-style: normal;
     font-display: swap
@@ -1018,7 +1018,7 @@ body>.os-scrollbar {
 
 @font-face {
     font-family: TT Ramillas;
-    src: url(/wp-content/themes/nwp/public/build/assets/tt-ramillas-regular-kJ3KApO0.woff2) format("woff2");
+    src: url(/wp-content/themes/nwp/public/build/assets/gr-amedeus-regular.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap
